@@ -8,6 +8,10 @@ const groupOrder = function(orders) {
 		console.log(`Order: hot dog with ${topping}`)
 	};
 
+	const friesOrder = (quantity, size) {
+		console.log(`${quantity} ${size} boxes of fries`);
+	}
+	
 	groupOrder.pizzaOrder = pizzaOrder;
 	groupOrder.hotDogOrder = hotDogOrder;
 
@@ -31,12 +35,18 @@ const groupOrder = function(orders) {
 	console.log(`Total: \$${getTotal(orders.length)}`);
 }
 
-groupOrder([]);
+groupOrder([]); // Calls empty function for nested function command
 groupOrder(
 	[
 		groupOrder.pizzaOrder("pepperoni", "Thick", "large"),
 		groupOrder.pizzaOrder("veggies", "deep", "small"),
 		groupOrder.hotDogOrder("mustard"),
 		groupOrder.pizzaOrder("sausage", "Thin", "medium"),
+	]
+);
+groupOrder(
+	[
+		groupOrder.hotDogOrder("ketchup"),
+		groupOrder.friesOrder(2, "small")
 	]
 );
