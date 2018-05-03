@@ -9,7 +9,7 @@ const groupOrder = function(orders) {
 	};
 
 	const hotDogOrder = (topping) => {
-		console.log(`Order: hot dog with ${titleCase(topping)}`)
+		console.log(`Order: Hot dog with ${topping}`)
 	};
 
 	const friesOrder = (quantity, size) => {
@@ -41,8 +41,9 @@ const groupOrder = function(orders) {
 		
 	};
 	if (orders !== null) { // Doesn't log array that has no orders
-		console.log(`\nTotal: \$${getTotal(orders.length)} \n`);
+		console.log(`\nTotal: \$${getTotal(orders.length)} \n\n`);
 	}	
+
 }
 
 groupOrder(null); // Calls null function for nested function command
