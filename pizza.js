@@ -16,13 +16,14 @@ const groupOrder = function(orders) {
 		console.log(`${quantity} ${size} boxes of fries`);
 	}
 	
+	const addDrink = (name, quantity, size) => {
+		console.log(`Drink: ${quantity} ${size} ${name} `);
+	};
+	
 	groupOrder.pizzaOrder = pizzaOrder;
 	groupOrder.hotDogOrder = hotDogOrder;
 	groupOrder.friesOrder = friesOrder;
-
-	const addDrink = (name, quantity) => {
-
-	};
+	groupOrder.addDrink = addDrink;
 
 	const getSubTotal = (itemCount) => {
 		return 7.5 * itemCount;
@@ -49,6 +50,7 @@ groupOrder(null); // Calls null function for nested function command
 groupOrder(
 	[
 		groupOrder.pizzaOrder("pepperoni", "thick", "large"),
+		groupOrder.addDrink("Sprite", 1),
 		groupOrder.pizzaOrder("veggies", "deep", "small"),
 		groupOrder.hotDogOrder("mustard"),
 		groupOrder.pizzaOrder("sausage", "Thin", "medium"),
