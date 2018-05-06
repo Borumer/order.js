@@ -25,6 +25,7 @@ const groupOrder = function(orders) {
 	
 	const addDrink = (name, quantity) => {
 		sideCount++;
+		return "drink";
 	};
 		
 	groupOrder.pizzaOrder = pizzaOrder;
@@ -56,9 +57,10 @@ const groupOrder = function(orders) {
 		
 	};
 
+	var sides = ["fries", "drink"];
 	if (orders !== undefined) { // Doesn't log array that has no orders
 		for (let i = 0; i < orders.length; i++) {
-			if(orders[i] === "fries") {sideCount++;}
+			if(orders[i] === sides[i]) {sideCount++;}
 		}
 		console.log(`\nYour total is \$${getTotal(orders.length)}. \nEnjoy your meal!\n\n`);
 	}	
