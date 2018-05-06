@@ -34,6 +34,7 @@ const groupOrder = function(orders) {
 	groupOrder.hotDogOrder = hotDogOrder;
 	groupOrder.friesOrder = friesOrder;
  	groupOrder.addDrink = addDrink;
+
 	
 	const getSubTotal = (itemCount) => {
 		const mealCount = itemCount - sideCount;
@@ -41,6 +42,9 @@ const groupOrder = function(orders) {
 		const costPerSide = 3.50;
 		const totalSideCost = sideCount * costPerSide;
 		const totalMealCost = mealCount * costPerMeal;
+
+
+		console.log(itemCount, sideCount, mealCount);
 
 		return totalMealCost + totalSideCost;
 	};
@@ -57,7 +61,15 @@ const groupOrder = function(orders) {
 		return total.toFixed(2);
 		
 	};
-  
+
+
+	if (orders !== undefined) { // Doesn't log array that has no orders
+		for (let i = 0; i < orders.length; i++) {
+			if(orders[i] === "fries") {sideCount++;}
+		}
+		console.log(`\nYour total is \$${getTotal(orders.length)}. \nEnjoy your meal!\n\n`);
+	}	
+}
 	var sides = ["fries", "drink"];
 	if (orders !== undefined) { // If orders array is given
 		for (let i = 0; i < orders.length; i++) {
