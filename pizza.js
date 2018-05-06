@@ -1,4 +1,5 @@
 const groupOrder = function(orders) {
+
 	let sideCount = 0;
 
 	function titleCase(text) {
@@ -6,14 +7,14 @@ const groupOrder = function(orders) {
 	}
 
 	const pizzaOrder = (topping, crustType, size) => {
-		if (topping === "") {
+    if (topping === "") {
 			console.log(`Order: ${titleCase(size)} ${crustType.toLowerCase()} crust plain cheese pizza`);
 		}
 		else {
 			console.log(`Order: ${titleCase(size)} ${crustType.toLowerCase()} crust ${topping} pizza`);
 		}
 	};
-
+  
 	const hotDogOrder = (topping) => {
 		console.log(`Order: Hot dog with ${topping}`);
 	};
@@ -23,7 +24,8 @@ const groupOrder = function(orders) {
 		return "fries";
 	}
 	
-	const addDrink = (name, quantity) => {
+	const addDrink = (name, quantity, size) => {
+    console.log(`Drink: ${quantity} ${size} ${name}`);
 		sideCount++;
 		return "drink";
 	};
@@ -31,6 +33,7 @@ const groupOrder = function(orders) {
 	groupOrder.pizzaOrder = pizzaOrder;
 	groupOrder.hotDogOrder = hotDogOrder;
 	groupOrder.friesOrder = friesOrder;
+ 	groupOrder.addDrink = addDrink;
 	
 	const getSubTotal = (itemCount) => {
 		const mealCount = itemCount - sideCount;
@@ -56,24 +59,25 @@ const groupOrder = function(orders) {
 		return total.toFixed(2);
 		
 	};
-
+  
 	var sides = ["fries", "drink"];
-	if (orders !== undefined) { // Doesn't log array that has no orders
+	if (orders !== undefined) { // If orders array is given
 		for (let i = 0; i < orders.length; i++) {
 			if(orders[i] === sides[i]) {sideCount++;}
 		}
 		console.log(`\nYour total is \$${getTotal(orders.length)}. \nEnjoy your meal!\n\n`);
-	}	
-}
+	}
+};
 
 groupOrder(); // Calls undefined function for nested function commands
 groupOrder(
 	[
-		groupOrder.pizzaOrder("", "thick", "large"),
-		groupOrder.pizzaOrder("vegetable", "deep", "small"),
+		groupOrder.pizzaOrder("pepperoni", "thick", "large"),
+		groupOrder.addDrink("Sprite", 1),
+		groupOrder.pizzaOrder("veggies", "deep", "small"),
 		groupOrder.hotDogOrder("mustard"),
 		groupOrder.pizzaOrder("sausage", "Thin", "medium"),
-		//groupOrder.friesOrder(1, "medium")
+		groupOrder.friesOrder(1, "medium")
 	]
 );
 groupOrder(
