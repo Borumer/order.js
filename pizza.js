@@ -39,8 +39,6 @@ const groupOrder = function(orders) {
 		const totalSideCost = sideCount * costPerSide;
 		const totalMealCost = mealCount * costPerMeal;
 
-		console.log(itemCount, sideCount, mealCount);
-
 		return totalMealCost + totalSideCost;
 	};
 
@@ -73,7 +71,7 @@ groupOrder(
 		groupOrder.pizzaOrder("vegetable", "deep", "small"),
 		groupOrder.hotDogOrder("mustard"),
 		groupOrder.pizzaOrder("sausage", "Thin", "medium"),
-		//groupOrder.friesOrder(1, "medium")
+		groupOrder.friesOrder(1, "medium")
 	]
 );
 groupOrder(
