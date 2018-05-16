@@ -1,5 +1,6 @@
 const groupOrder = function(orders) {
 	let sideCount = 0;
+
 	let sides = [];
 
 	function titleCase(text) {
@@ -36,7 +37,7 @@ const groupOrder = function(orders) {
 	groupOrder.hotDogOrder = hotDogOrder;
 	groupOrder.friesOrder = friesOrder;
 	groupOrder.addDrink = addDrink;
-
+  
 	const getSubTotal = (itemCount) => {
 		const mealCount = itemCount - sideCount; // Calculates amount of non-sides
 		const costPerMeal = 7.50;
@@ -44,7 +45,7 @@ const groupOrder = function(orders) {
 		const totalSideCost = sideCount * costPerSide;
 		const totalMealCost = mealCount * costPerMeal;
 		const subTotal = totalMealCost + totalSideCost;
-
+    
 		return subTotal;
 	};
 
@@ -58,7 +59,6 @@ const groupOrder = function(orders) {
 		const subTotal = getSubTotal(itemCount);
 		const total = subTotal + tax;
 		return total.toFixed(2);
-
 	};
 
 	if (orders !== undefined) { // If the array contains at least 1 order, do this
