@@ -1,43 +1,39 @@
 const groupOrder = function(orders) {
 	let sideCount = 0;
 
-	let sides = [];
-
 	function titleCase(text) {
 		return text.substring(0, 1).toUpperCase() + text.substring(1, text.length).toLowerCase();
 	}
 
-	const options = [
-		pizzaOrder = (topping, crustType, size) => {
-			if (topping === "") {
-				console.log(`Order: ${titleCase(size)} ${crustType.toLowerCase()} crust plain cheese pizza`);
-			} else {
-				console.log(`Order: ${titleCase(size)} ${crustType.toLowerCase()} crust ${topping} pizza`);
-			}
-			return "pizza";
-		},
+	const pizzaOrder = (topping, crustType, size) => {
+		if (topping === "") {
+			console.log(`Order: ${titleCase(size)} ${crustType.toLowerCase()} crust plain cheese pizza`);
+		} else {
+			console.log(`Order: ${titleCase(size)} ${crustType.toLowerCase()} crust ${topping} pizza`);
+		}
+		return "meal";
+	};
 
-		hotDogOrder = (topping) => {
-			console.log(`Order: Hot dog with ${topping}`);
-			return "hot dog";
-		},
+	const hotDogOrder = (topping) => {
+		console.log(`Order: Hot dog with ${topping}`);
+		return "meal";
+	};
 
-		friesOrder = (quantity, size) => {
-			console.log(`Side: ${quantity} ${size} boxes of french fries`);
-			return "fries";
-		},
+	const friesOrder = (quantity, size) => {
+		console.log(`Side: ${quantity} ${size} boxes of french fries`);
+		return "side";
+	};
 
-		addDrink = (name, quantity) => {
-			sideCount++;
-			return "drink";
-		},
-	];
+	const addDrink = (name, quantity) => {
+		console.log(`Side: ${quantity} ${name}`);
+		return "side";
+	};
 
 	groupOrder.pizzaOrder = pizzaOrder;
 	groupOrder.hotDogOrder = hotDogOrder;
 	groupOrder.friesOrder = friesOrder;
 	groupOrder.addDrink = addDrink;
-  
+
 	const getSubTotal = (itemCount) => {
 		const mealCount = itemCount - sideCount; // Calculates amount of non-sides
 		const costPerMeal = 7.50;
@@ -45,7 +41,7 @@ const groupOrder = function(orders) {
 		const totalSideCost = sideCount * costPerSide;
 		const totalMealCost = mealCount * costPerMeal;
 		const subTotal = totalMealCost + totalSideCost;
-    
+
 		return subTotal;
 	};
 
@@ -62,12 +58,8 @@ const groupOrder = function(orders) {
 	};
 
 	if (orders !== undefined) { // If the array contains at least 1 order, do this
-		for (let i = 0; i < orders.length; i++) { // For each value of the orders array
-			sides.push(options[i]);
-			if (orders[i] === sides[i]) { // If any of the values of the orders array = 
-				sideCount++;
-			}
-		}
+		// The side count = the length of a filtered array of orders contain only the elements returning "side"
+		sideCount = orders.filter(function(item) {return item === "side"; }).length;
 		console.log(`\nYour total is \$${getTotal(orders.length)}. \nEnjoy your meal!\n\n`);
 	}
 }
@@ -85,6 +77,7 @@ groupOrder(
 groupOrder(
 	[
 		groupOrder.hotDogOrder("ketchup"),
-		groupOrder.friesOrder(2, "small")
+		groupOrder.friesOrder(2, "small"),
+		groupOrder.addDrink("Sprite", 1)
 	]
 );
