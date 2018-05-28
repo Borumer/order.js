@@ -25,7 +25,7 @@ const groupOrder = function(orders) {
 	};
 
 	const addDrink = (name, quantity) => {
-		console.log(`Side: ${quantity} ${name}`);
+		console.log(`Side Drink: ${quantity} ${name}`);
 		return "side";
 	};
 
@@ -36,11 +36,11 @@ const groupOrder = function(orders) {
 
 	const getSubTotal = (itemCount) => {
 		const mealCount = itemCount - sideCount; // Calculates amount of non-sides
-		const costPerMeal = 7.50;
-		const costPerSide = 3.50;
-		const totalSideCost = sideCount * costPerSide;
-		const totalMealCost = mealCount * costPerMeal;
-		const subTotal = totalMealCost + totalSideCost;
+		const costPerMeal = 7.50; // Costs in dollars per meal item
+		const costPerSide = 3.50; // Cost in dollars per side item
+		const totalSideCost = sideCount * costPerSide; // Total side cost = product of number of sides and cost per side
+		const totalMealCost = mealCount * costPerMeal; // Total meal cost = product of number of meals and cost per meal
+		const subTotal = totalMealCost + totalSideCost; // Sub total = all the item costs added together
 
 		return subTotal;
 	};
@@ -58,26 +58,37 @@ const groupOrder = function(orders) {
 	};
 
 	if (orders !== undefined) { // If the array contains at least 1 order, do this
-		// The side count = the length of a filtered array of orders contain only the elements returning "side"
-		sideCount = orders.filter(function(item) {return item === "side"; }).length;
+		// The side count = the length of a filtered array of true booleans for each element returning "side"
+		sideCount = orders.filter(function(item) {
+			return item === "side";
+		}).length;
 		console.log(`\nYour total is \$${getTotal(orders.length)}. \nEnjoy your meal!\n\n`);
 	}
 }
 
 groupOrder(); // Calls undefined function for nested function commands
-groupOrder(
-	[
-		groupOrder.pizzaOrder("", "thick", "large"),
-		groupOrder.pizzaOrder("vegetable", "deep", "small"),
-		groupOrder.hotDogOrder("mustard"),
-		groupOrder.pizzaOrder("sausage", "Thin", "medium"),
-		groupOrder.friesOrder(1, "medium")
-	]
-);
-groupOrder(
-	[
-		groupOrder.hotDogOrder("ketchup"),
-		groupOrder.friesOrder(2, "small"),
-		groupOrder.addDrink("Sprite", 1)
-	]
-);
+
+function sleep(milliseconds) {
+	return new Promise(resolve => setTimeout(resolve, milliseconds));
+}
+
+async function demo(time) {
+	groupOrder(
+		[
+			groupOrder.pizzaOrder("", "thick", "large"),
+			groupOrder.pizzaOrder("vegetable", "deep", "small"),
+			groupOrder.hotDogOrder("mustard"),
+			groupOrder.pizzaOrder("sausage", "Thin", "medium"),
+			groupOrder.friesOrder(1, "medium")
+		]
+	);
+	await sleep(time);
+	groupOrder(
+		[
+			groupOrder.hotDogOrder("ketchup"),
+			groupOrder.friesOrder(2, "small"),
+			groupOrder.addDrink("Sprite", 1)
+		]
+	);
+}
+demo(3000);
