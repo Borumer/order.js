@@ -57,7 +57,7 @@ const groupOrder = function(orders) {
 		return total.toFixed(2);
 	};
 
-	if (orders !== undefined) { // If the array contains at least 1 order, do this
+	if (orders !== undefined) { // If the array is initialized, do this
 		// The side count = the length of a filtered array of true booleans for each element returning "side"
 		sideCount = orders.filter(function(item) {
 			return item === "side";
@@ -78,9 +78,10 @@ async function demo(time) {
 			groupOrder.pizzaOrder("", "thick", "large"),
 			groupOrder.pizzaOrder("vegetable", "deep", "small"),
 			groupOrder.hotDogOrder("mustard"),
-			groupOrder.pizzaOrder("sausage", "Thin", "medium"),
-			groupOrder.friesOrder(1, "medium")
-		]
+			groupOrder.pizzaOrder("pepperoni", "Thin", "medium"),
+			groupOrder.friesOrder(1, "medium"),
+			groupOrder.addDrink("Sprite", 2)
+		],
 	);
 	await sleep(time);
 	groupOrder(
