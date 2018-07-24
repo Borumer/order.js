@@ -1,15 +1,15 @@
+String.prototype.toTitleCase = function() {
+	return this.substring(0, 1).toUpperCase() + this.substring(1, this.length).toLowerCase();
+}
+
 const groupOrder = function(orders) {
 	let sideCount = 0;
 
-	function titleCase(text) {
-		return text.substring(0, 1).toUpperCase() + text.substring(1, text.length).toLowerCase();
-	}
-
 	const pizzaOrder = (topping, crustType, size) => {
 		if (topping === "") {
-			console.log(`Order: ${titleCase(size)} ${crustType.toLowerCase()} crust plain cheese pizza`);
+			console.log(`Order: ${size.toTitleCase()} ${crustType.toLowerCase()} crust plain cheese pizza`);
 		} else {
-			console.log(`Order: ${titleCase(size)} ${crustType.toLowerCase()} crust ${topping} pizza`);
+			console.log(`Order: ${size.toTitleCase()} ${crustType.toLowerCase()} crust ${topping} pizza`);
 		}
 		return "meal";
 	};
