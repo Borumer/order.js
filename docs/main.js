@@ -1,6 +1,9 @@
-var client = new XMLHttpRequest();
-client.open('GET', './foo.txt');
-client.onreadystatechange = function() {
-  alert(client.responseText);
-}
-client.send();
+var foo = document.getElementById("foo");
+const xhr = new XMLHttpRequest();
+
+xhr.open("GET", "./foo.txt", true);
+
+xhr.onreadystatechange = function() {
+	foo.innerHTML = xhr.responseText;
+};
+xhr.send();
