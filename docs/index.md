@@ -12,4 +12,5 @@ Order.js is the first ES6 program (through the console) I have made that is host
  (https://creativecommons.org/licenses/by/2.0
 )], via Wikimedia Commons" href = "https://commons.wikimedia.org/wiki/File:Cheese_and_Pepperoni_Pizza_(4825046245).jpg"><img width="512" alt = "Cheese and Pepperoni Pizza (4825046245)" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Cheese_and_Pepperoni_Pizza_%284825046245%29.jpg/512px-Cheese_and_Pepperoni_Pizza_%284825046245%29.jpg"></a>
 
-<script src = "https://rawgit.com/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/master/script.js"></script>
+<script src = "https://cdn.rawgit.com/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/dcd2ad4/script.js"></script>
+
