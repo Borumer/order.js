@@ -68,28 +68,3 @@ const groupOrder = function(orders) {
 
 groupOrder(); // Calls undefined function for nested function commands
 
-function sleep(milliseconds) {
-	return new Promise(resolve => setTimeout(resolve, milliseconds));
-}
-
-async function demo(time) {
-	groupOrder(
-		[
-			groupOrder.pizzaOrder("", "thick", "large"),
-			groupOrder.pizzaOrder("vegetable", "deep", "small"),
-			groupOrder.hotDogOrder("mustard"),
-			groupOrder.pizzaOrder("pepperoni", "Thin", "medium"),
-			groupOrder.friesOrder(1, "medium"),
-			groupOrder.addDrink("Sprite", 2)
-		],
-	);
-	await sleep(time);
-	groupOrder(
-		[
-			groupOrder.hotDogOrder("ketchup"),
-			groupOrder.friesOrder(2, "small"),
-			groupOrder.addDrink("Sprite", 1)
-		]
-	);
-}
-demo(3000);
