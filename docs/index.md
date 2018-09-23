@@ -2,7 +2,7 @@
 
 Order.js is the first ES6 program (through the console) I have made that is hosted on GitHub through Git workflow. The person takes an order through a function call and the price is calculated based on what they ordered and how many items. 
 
-<object style = "margin-left: 0;" width = "900" height = "400" data = "./README.html" type = "text/html"></object>
+<object width = "900" height = "400" data = "./README.html" type = "text/html"></object>
 
 [Home](https://knowledgeablekangaroo.github.io)
 
