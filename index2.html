@@ -48,6 +48,23 @@
 
         <object width="900" height="270" data="./README.html" type="text/html"></object>
 
+        <form action = "">
+            <label for = "orderType">Enter the type of food order: </label>
+            <select name = "orderType" id = "orderType" required>
+                <option value = "">--Select a type--</option>
+                <option value = "pizza"> Pizza </option>
+                <option value = "hotDog"> Hot Dog </option>
+                <option value = "fries"> Fries </option>
+            </select> <br>
+            <label for = "orderTopping">Enter your topping: </label>
+            <input type = "text" name = "orderTopping"> <br> 
+            <label for = "crustType">Enter your crust: </label>
+            <input type = "text" name = "crustType"> <br>  
+            <label for = "size">Enter the size of your pizza: </label>
+            <input type = "text" name = "size"> <br>
+            <br> <input type="button" value="Order" onclick="showOrder()"/>
+        </form> <br>
+
         <div class = "highlight"> 
             <div class = "gt" id = "program"> </div>
         </div>
