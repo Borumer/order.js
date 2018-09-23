@@ -8,7 +8,9 @@ Order.js is the first ES6 program (through the console) I have made that is host
 
 <object width = "900" height = "270" data = "./README.html" type = "text/html"></object>
 
-<div id = "program"> </div>
+<div class = "highlight"> 
+	<div class = "gt" id = "program"> </div>
+</div>
 <script src = "./orderIn.js"></script>
 <script src = "./order.js"></script>
 
