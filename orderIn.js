@@ -6,15 +6,25 @@ console.log = function(statement) {
 
 function showOrder() {
 	const form = document.querySelector("form");
+
 	checkNull: try {
 		for (let i = 0; i < Object.keys(form.elements).length; i++) {
+			// If the user has not entered a required field don't order
 			if(form.elements[i].required && form.elements[i].value === "") {
 				break checkNull;
 			}
 		}
 		groupOrder(
 			[
-				groupOrder[form.orderType.value + "Order"](form.orderTopping.value, form.crustType.value, form.size.value),
+				groupOrder[form.orderType.value + "Order"](
+					{
+						topping: form.orderTopping.value, 
+						crustType: form.crustType.value,
+						size: form.size.value,
+						quantity: form.quantity.value,
+						name: form.drink.value
+					}
+				),
 			]
 		);
 	}
@@ -23,17 +33,21 @@ function showOrder() {
 	}
 }
 
+let counter = 0;
+const firstForm = document.querySelector("form");
+const newForm = firstForm.cloneNode(true);
+const newFields = newForm.childNodes;
+const afterEl = document.getElementById('writeroot');
+
 function duplicateForm() {
-	var newFields = document.querySelector("form").cloneNode(true);
-	newFields.id = '';
-	newFields.style.display = 'block';
-	var newField = newFields.childNodes;
-	for (var i=0;i<newField.length;i++) {
-		var theName = newField[i].name
+	counter++;
+	newForm.id = '';
+	newForm.style.display = 'block';
+	for (let i = 0; i < newFields.length; i++) {
+		const theName = newFields[i].name;
 		if (theName)
-			newField[i].name = theName;
+			newFields[i].name = theName + counter;
 	}
-	var insertHere = document.querySelector("form");
-	insertHere.parentNode.insertBefore(newFields,insertHere);	
+	afterEl.parentNode.insertBefore(newForm, afterEl);
 }
 
