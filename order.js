@@ -5,26 +5,26 @@ String.prototype.toTitleCase = function() {
 const groupOrder = function(orders) {
 	let sideCount = 0;
 
-	const pizzaOrder = (obj) => {
+	const pizzaOrder = ({size, crustType, topping}) => {
 		if (topping === "") {
-			console.log(`Order: ${obj.size.toTitleCase()} ${obj.crustType.toLowerCase()} crust plain cheese pizza`);
+			console.log(`Order: ${size.toTitleCase()} ${crustType.toLowerCase()} crust plain cheese pizza`);
 		} else {
-			console.log(`Order: ${obj.size.toTitleCase()} ${obj.crustType.toLowerCase()} crust ${obj.topping} pizza`);
+			console.log(`Order: ${size.toTitleCase()} ${crustType.toLowerCase()} crust ${topping} pizza`);
 		}
 		return "meal";
 	};
 
-	const hotDogOrder = (topping) => {
+	const hotDogOrder = ({topping}) => {
 		console.log(`Order: Hot dog with ${topping}`);
 		return "meal";
 	};
 
-	const friesOrder = (quantity, size) => {
+	const friesOrder = ({quantity, size}) => {
 		console.log(`Side: ${quantity} ${size} boxes of french fries`);
 		return "side";
 	};
 
-	const addDrink = (name, quantity) => {
+	const addDrink = ({name, quantity}) => {
 		console.log(`Side Drink: ${quantity} ${name}`);
 		return "side";
 	};
