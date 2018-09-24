@@ -8,8 +8,33 @@ Order.js is the first ES6 program (through the console) I have made that is host
 
 <object width = "900" height = "270" data = "./README.html" type = "text/html"></object>
 
-<div class = "highlight"> 
-	<div class = "gt" id = "program"> </div>
+<form action = "">
+    <label for = "orderType">Enter the type of food order: </label>
+    <select name = "orderType" id = "orderType" required>
+        <option value = "">--Select a type--</option>
+        <option value = "pizza"> Pizza </option>
+        <option value = "hotDog"> Hot Dog </option>
+        <option value = "fries"> Fries </option>
+        <option value = "drink"> Drink </option>
+    </select> <br>
+    <label for = "orderTopping">Enter your topping: </label>
+    <input type = "text" name = "orderTopping"> <br> 
+    <label for = "crustType">Enter your crust: </label>
+    <input type = "text" name = "crustType"> <br>  
+    <label for = "size">Enter the size: </label>
+    <input type = "text" name = "size" required> <br>  
+    <label for = "quantity">Enter your quantity: </label>
+    <input type = "text" name = "quantity"> <br>  
+    <label for = "drink"> Enter your drink </label>
+    <input type = "text" name = "drink"> <br>
+    <br>
+
+    <input type = "button" value = "Order" onclick = "showOrder()" />
+    <input type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
+</form> <br>
+
+<div id = "writeroot" style = "height: 50vh; overflow: auto;" class = "highlight"> 
+    <div class = "gt" id = "program"> </div>
 </div>
 <script src = "./orderIn.js"></script>
 <script src = "./order.js"></script>
