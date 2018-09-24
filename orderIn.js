@@ -20,7 +20,7 @@ function showOrder() {
 						crustType: form.crustType.value,
 						size: form.size.value,
 						quantity: form.quantity.value,
-						name: form.order.value
+						name: form.drink.value
 					}
 				),
 			]
