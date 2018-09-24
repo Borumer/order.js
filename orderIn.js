@@ -14,7 +14,15 @@ function showOrder() {
 		}
 		groupOrder(
 			[
-				groupOrder[form.orderType.value + "Order"](form.orderTopping.value, form.crustType.value, form.size.value),
+				groupOrder[form.orderType.value + "Order"](
+					{
+						topping: form.orderTopping.value, 
+						crustType: form.crustType.value,
+						size: form.size.value,
+						quantity: form.quantity.value,
+						name: form.order.value
+					}
+				),
 			]
 		);
 	}

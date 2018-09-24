@@ -5,11 +5,11 @@ String.prototype.toTitleCase = function() {
 const groupOrder = function(orders) {
 	let sideCount = 0;
 
-	const pizzaOrder = (topping, crustType, size) => {
+	const pizzaOrder = (obj) => {
 		if (topping === "") {
-			console.log(`Order: ${size.toTitleCase()} ${crustType.toLowerCase()} crust plain cheese pizza`);
+			console.log(`Order: ${obj.size.toTitleCase()} ${obj.crustType.toLowerCase()} crust plain cheese pizza`);
 		} else {
-			console.log(`Order: ${size.toTitleCase()} ${crustType.toLowerCase()} crust ${topping} pizza`);
+			console.log(`Order: ${obj.size.toTitleCase()} ${obj.crustType.toLowerCase()} crust ${obj.topping} pizza`);
 		}
 		return "meal";
 	};
