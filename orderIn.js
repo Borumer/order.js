@@ -24,6 +24,16 @@ function showOrder() {
 }
 
 function duplicateForm() {
-	
+	var newFields = document.querySelector("form").cloneNode(true);
+	newFields.id = '';
+	newFields.style.display = 'block';
+	var newField = newFields.childNodes;
+	for (var i=0;i<newField.length;i++) {
+		var theName = newField[i].name
+		if (theName)
+			newField[i].name = theName;
+	}
+	var insertHere = document.querySelector("form");
+	insertHere.parentNode.insertBefore(newFields,insertHere);	
 }
 
