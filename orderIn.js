@@ -3,9 +3,12 @@ console.log = function(statement) {
 	outputEl.innerHTML += `${statement} <br>`;
 }
 
+// Get needed elements and store in constant variables
 const firstForm = document.querySelector("form");
 const forms = document.querySelectorAll("form");
 const afterEl = document.getElementById('writeroot');
+
+// Define changing variables
 let form = firstForm;
 let counter = 0;
 
@@ -24,8 +27,8 @@ function duplicateForm() {
 	afterEl.parentNode.insertBefore(newForm, afterEl);
 }
 
-let orderArr = [];
 function orderAll(childEl) {
+	let orderArr = [];
 	form = childEl.parentNode;
 	checkNull: try {
 		// If the user has not entered a required field don't order		
