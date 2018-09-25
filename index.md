@@ -29,8 +29,8 @@ Order.js is the first ES6 program (through the console) I have made that is host
     <input type = "text" name = "drink"> <br>
     <br>
 
-    <input type = "button" value = "Order" onclick = "showOrder()" />
-    <input type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
+<input type = "button" value = "Order" onclick = "showOrder()" />
+<input type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
 </form> <br>
 
 <div id = "writeroot" style = "height: 50vh; overflow: auto;" class = "highlight"> 
