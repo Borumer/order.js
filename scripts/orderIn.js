@@ -32,24 +32,14 @@ function orderAll(childEl) {
 	form = childEl.parentNode;
 	checkNull: try {
 		// If the user has not entered a required field don't order		
-		for (let i = 0; i < Object.keys(form.elements).length; i++) {
+		for (let i = 0; i < form.elements.length; i++) {
 			if(form.elements[i].required && form.elements[i].value === "") {
 				break checkNull;
 			}
 		}
 		for (order in forms) {
 			orderArr.push(groupOrder[order.orderType.value + "Order"]);
-		}
-		for (let i = 0; i < orderArr.length; i++) {
-			orderArr[i](
-				{
-					topping: order.topping.value,
-					crustType: order.crustType.value,
-					size: order.size.value,
-					quantity: order.quantity.value,
-					name: order.name.value
-				}
-			)
+			console.log(orderArr);
 		}
 	}
 	catch(e) {
