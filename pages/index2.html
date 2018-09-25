@@ -32,7 +32,21 @@
 </head>
 
 <body>
-     <script src="https://cdn.rawgit.com/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/master/script.js"></script>
+    <script src="https://cdn.rawgit.com/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/master/script.js"></script>
+    <script> 
+        let sslink = document.createElement("link"); 
+        sslink.href = "../css/style.css";
+        sslink.rel = "stylesheet";
+        sslink.type = "text/css";
+        document.head.appendChild(sslink);
+
+        let favLink = document.createElement("link");
+        favLink.rel = "shortcut icon";
+        favLink.type = "images/x-icon";
+        favLink.href = "../images/icon.ico";
+        document.head.appendChild(favLink);
+    </script>
+
     <section class="page-header">
         <h1 class="project-name">order.js</h1>
         <h2 class="project-tagline">A JavaScript program taking the pizza order of multiple customers</h2>
@@ -75,8 +89,8 @@
         <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
             <div class = "gt" id = "program"> </div>
         </div>
-        <script src = "./orderIn.js"></script>
-        <script src = "./order.js"></script>
+        <script src = "../scripts/orderIn.js"></script>
+        <script src = "../scripts/order.js"></script>
 
         <p><a href="https://knowledgeablekangaroo.github.io">Home</a></p>
 
@@ -96,3 +110,4 @@
 </body>
 
 </html>
+
