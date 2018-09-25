@@ -68,11 +68,10 @@
             <label for = "drink"> Enter your drink </label>
             <input type = "text" name = "drink"> <br>
             <br>
-
-            <input type = "button" value = "Order" onclick = "showOrder(this)" />
-            <input type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
-        </form> <br>
-        <input id = "writeroot" type = "button" value = "Finish Order" onclick = "orderAll()">
+            <input type = "button" value = "Remove Order">
+        </form>
+        <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
+        <input type = "button" value = "Finish Order" onclick = "orderAll(this)">
         <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
             <div class = "gt" id = "program"> </div>
         </div>
