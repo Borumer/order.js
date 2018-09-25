@@ -4,11 +4,11 @@ console.log = function(statement) {
 }
 
 const firstForm = document.querySelector("form");
-let form = firstForm;
 const forms = document.querySelectorAll("form");
 const afterEl = document.getElementById('writeroot');
-
+let form = firstForm;
 let counter = 0;
+
 function duplicateForm() {
 	const newForm = firstForm.cloneNode(true);
 	const newFields = newForm.childNodes;
@@ -34,23 +34,27 @@ function orderAll(childEl) {
 				break checkNull;
 			}
 		}
+		for (order in forms) {
+			orderArr.push(groupOrder[order.orderType.value + "Order"]);
+		}
+		for (let i = 0; i < orderArr.length; i++) {
+			orderArr[i](
+				{
+					topping: order.topping.value,
+					crustType: order.crustType.value,
+					size: order.size.value,
+					quantity: order.quantity.value,
+					name: order.name.value
+				}
+			)
+		}
 	}
 	catch(e) {
 
 	}	
-	console.log(forms[0].orderType);
-	for (order in forms) {
-		console.log(order.elements);
-		orderArr.push(groupOrder[order.orderType.value + "Order"](
-			{
-				topping: order.topping.value,
-				crustType: order.crustType.value,
-				size: order.size.value,
-				quantity: order.quantity.value,
-				name: order.name.value
-			}
-		));
-	}
-	groupOrder(orderArr);
+}
+
+function removeOrder(el) {
+	el.parentNode.parentNode.removeChild(el.parentNode);
 }
 
