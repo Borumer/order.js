@@ -1,3 +1,4 @@
+// Define/Redfine methods of predefined objects
 console.log = function(statement) {
 	const outputEl = document.querySelector("#program");
 	outputEl.innerHTML += `${statement} <br>`;
@@ -5,12 +6,14 @@ console.log = function(statement) {
 
 // Get needed elements and store in constant variables
 const firstForm = document.querySelector("form");
-const forms = document.querySelectorAll("form");
-const afterEl = document.getElementById('writeroot');
+const forms = document.querySelectorAll("form"); // Stores nodeList of all the orders the user filled out
+const afterEl = document.getElementById('writeroot'); // Store element that is put after the last order form
+const formsParent = document.getElementById("forms");
 
 // Define changing variables
 let counter = 0;
 
+// Define functions called in input buttons in forms
 function duplicateForm() {
 	const newForm = firstForm.cloneNode(true);
 	const newFields = newForm.childNodes;
@@ -23,9 +26,10 @@ function duplicateForm() {
 		if (theName)
 			newFields[i].for = theName + counter;
 	}
-	afterEl.parentNode.insertBefore(newForm, afterEl);
+	formsParent.insertBefore(newForm, afterEl);
 }
 function orderAll() {
+	formsParent.innerHTML = "<p style = 'text-align: center; color: black; font-family: `Times New Roman`; font-size: 2em;'> Order submitted. Thank you for ordering! </p>"
 	let orderArr = [];
 	checkNull: try {
 		// Loops through all forms
@@ -63,8 +67,8 @@ function orderAll() {
 
 	}	
 }
-
 function removeOrder(el) {
+	// Call remove method on element to remove
 	el.parentNode.parentNode.removeChild(el.parentNode);
 }
 
