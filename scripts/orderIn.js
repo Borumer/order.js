@@ -9,7 +9,6 @@ const forms = document.querySelectorAll("form");
 const afterEl = document.getElementById('writeroot');
 
 // Define changing variables
-let form = firstForm;
 let counter = 0;
 
 function duplicateForm() {
@@ -26,21 +25,39 @@ function duplicateForm() {
 	}
 	afterEl.parentNode.insertBefore(newForm, afterEl);
 }
-
-function orderAll(childEl) {
+function orderAll() {
 	let orderArr = [];
-	form = childEl.parentNode;
 	checkNull: try {
-		// If the user has not entered a required field don't order		
-		for (let i = 0; i < form.elements.length; i++) {
-			if(form.elements[i].required && form.elements[i].value === "") {
-				break checkNull;
-			}
+		// Loops through all forms
+		for (let i = 0; i < forms.length; i++) {
+			currentForm = forms[i];
+			// Loops through elements in forms
+			for (let i = 0; i < currentForm.length; i++) {
+				// If the user has not entered a required field don't order		
+				if(currentForm.elements[i].required && currentForm.elements[i].value === "") {
+					break checkNull;
+				}
+			}			
 		}
-		for (order in forms) {
-			orderArr.push(groupOrder[order.orderType.value + "Order"]);
-			console.log(orderArr);
-		}
+		groupOrder(
+			[
+				groupOrder[forms[0].orderType.value + "Order"]({
+					topping: forms[0].orderTopping.value,
+					size: forms[0].size.value,
+					crustType: forms[0].crustType.value
+				}),
+				groupOrder[forms[1].orderType.value + "Order"]({
+					topping: forms[1].orderTopping.value,
+					size: forms[1].size.value,
+					crustType: forms[1].crustType.value
+				}),
+				groupOrder[forms[2].orderType.value + "Order"]({
+					topping: forms[2].orderTopping.value,
+					size: forms[2].size.value,
+					crustType: forms[2].crustType.value
+				})
+			]
+		);					
 	}
 	catch(e) {
 
