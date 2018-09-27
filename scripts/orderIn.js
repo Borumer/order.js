@@ -18,8 +18,6 @@ function duplicateForm() {
 	const newForm = firstForm.cloneNode(true);
 	const newFields = newForm.elements;
 	counter++;
-	newForm.id = '';
-	newForm.style.display = 'block';
 	for (let i = 0; i < newFields.length - 1; i++) {
 		newFields[i].value = "";
 		newFields[i].name = firstForm[i].name;
@@ -39,7 +37,19 @@ function orderFood() {
 				}
 			}
 		}
-		console.log(forms[1].orderType.value);
+		console.log(forms[1] + " " + forms.length);
+		let arr = [];
+		for (let i = 0; i < counter; i++) {
+			arr.push(groupOrder[forms[i].orderType.value + "Order"](
+			{
+					topping: forms[i].orderTopping.value,
+					size: forms[i].size.value,
+					crustType: forms[i].crustType.value,
+					quantity: forms[i].quantity.value,
+					name: forms[i].drink.value
+			}
+			));
+		}
 
 		groupOrder(
 			[
