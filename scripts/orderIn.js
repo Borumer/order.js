@@ -6,10 +6,9 @@ console.log = function(statement) {
 
 // Get needed elements and store in constant variables
 const firstForm = document.querySelector("form");
-const forms = document.querySelectorAll("form"); // Stores nodeList of all the orders the user filled out
+const forms = document.getElementsByTagName("form"); // Stores nodeList of all the orders the user filled out
 const afterEl = document.getElementById('writeroot'); // Store element that is put after the last order form
 const formsParent = document.getElementById("forms"); // Stores div that contains the form elements and input buttons
-
 // Define changing variables
 let counter = 1;
 
@@ -25,6 +24,7 @@ function duplicateForm() {
 	formsParent.insertBefore(newForm, afterEl);
 }
 function orderFood() {
+		console.log(counter + "   " + forms.length);
 	checkNull: try {
 		// Loops through all forms
 		for (let i = 0; i < forms.length; i++) {
@@ -37,7 +37,6 @@ function orderFood() {
 				}
 			}
 		}
-		console.log(forms[1] + " " + forms.length);
 		let arr = [];
 		for (let i = 0; i < counter; i++) {
 			arr.push(groupOrder[forms[i].orderType.value + "Order"](
@@ -50,32 +49,6 @@ function orderFood() {
 			}
 			));
 		}
-
-		groupOrder(
-			[
-				groupOrder[forms[0].orderType.value + "Order"]({
-					topping: forms[0].orderTopping.value,
-					size: forms[0].size.value,
-					crustType: forms[0].crustType.value,
-					quantity: forms[0].quantity.value,
-					name: forms[0].drink.value
-				}),
-				groupOrder[forms[1].orderType.value + "Order"]({
-					topping: forms[1].orderTopping.value,
-					size: forms[1].size.value,
-					crustType: forms[1].crustType.value,
-					quantity: forms[1].quantity.value,
-					name: forms[1].drink.value
-				}),
-				groupOrder[forms[2].orderType.value + "Order"]({
-					topping: forms[2].orderTopping.value,
-					size: forms[2].size.value,
-					crustType: forms[2].crustType.value,
-					quantity: forms[2].quantity.value,
-					name: forms[2].drink.value
-				})
-			]
-		);
 		console.log("The function was called successfully!");					
 	}
 	catch(e) {console.log(e)}	
