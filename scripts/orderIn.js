@@ -24,7 +24,6 @@ function duplicateForm() {
 	formsParent.insertBefore(newForm, afterEl);
 }
 function orderFood() {
-		console.log(counter + "   " + forms.length);
 	checkNull: try {
 		// Loops through all forms
 		for (let i = 0; i < forms.length; i++) {
@@ -48,8 +47,7 @@ function orderFood() {
 					name: forms[i].drink.value
 			}
 			));
-		}
-		console.log("The function was called successfully!");					
+		}				
 	}
 	catch(e) {console.log(e)}	
 }
