@@ -1,4 +1,3 @@
-<script src = "https://cdn.rawgit.com/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/master/script.js"></script>
 <script> 
     let sslink = document.createElement("link"); 
     sslink.href = "../css/style.css";
