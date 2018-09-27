@@ -20,16 +20,13 @@ function duplicateForm() {
 	counter++;
 	newForm.id = '';
 	newForm.style.display = 'block';
-	for (let i = 0; i < forms.length; i++) forms[i].value = "";
+	for (let i = 0; i < newFields.length - 1; i++) {
+		newFields[i].value = "";
+		newFields[i].name = firstForm[i].name;
+	}
 	formsParent.insertBefore(newForm, afterEl);
 }
 function orderFood() {
-	for (let i = 0; i < forms.length; i++) {
-		if (!forms[i]) {
-			forms[i] = "";
-		}
-	}
-
 	checkNull: try {
 		// Loops through all forms
 		for (let i = 0; i < forms.length; i++) {
@@ -40,8 +37,10 @@ function orderFood() {
 				if(currentForm.elements[i].required && currentForm.elements[i].value === "") {
 					break checkNull;
 				}
-			}			
+			}
 		}
+		console.log(forms[1].orderType.value);
+
 		groupOrder(
 			[
 				groupOrder[forms[0].orderType.value + "Order"]({
@@ -66,9 +65,10 @@ function orderFood() {
 					name: forms[2].drink.value
 				})
 			]
-		);					
+		);
+		console.log("The function was called successfully!");					
 	}
-	catch(e) {}	
+	catch(e) {console.log(e)}	
 }
 function displaySubmitMessage() {
 	formsParent.innerHTML = `<p style = "text-align: center; color: black; font-family: 'Times New Roman'; font-size: 2em;"> Order submitted. Thank you for ordering! </p>`;
