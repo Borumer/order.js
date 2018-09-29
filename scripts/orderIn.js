@@ -47,7 +47,8 @@ function orderFood() {
 					name: forms[i].drink.value
 			}
 			));
-		}				
+		}
+		groupOrder(arr);				
 	}
 	catch(e) {console.log(e)}	
 }
