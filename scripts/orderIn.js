@@ -19,7 +19,7 @@ function duplicateForm() {
 	formsParent.insertBefore(newForm, afterEl);
 }
 function orderFood() {
-	checkNull: try {			
+	checkNull: try {
 		let arr = [];
 		// Loops through all forms
 		for (let i = 0; i < counter; i++) {
