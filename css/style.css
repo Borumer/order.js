@@ -200,6 +200,14 @@ legend {
 	padding: 0
 }
 
+select {
+	border: 1px solid grey;
+}
+
+select option {
+	border-color: none grey;
+}
+
 textarea {
 	overflow: auto
 }
