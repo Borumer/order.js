@@ -2,7 +2,7 @@ String.prototype.toTitleCase = function() {
 	return this.substring(0, 1).toUpperCase() + this.substring(1, this.length).toLowerCase();
 }
 
-const groupOrder = function(orders) {
+function groupOrder(orders) {
 	let sideCount = 0;
 
 	const pizzaOrder = ({size, crustType, topping}) => {

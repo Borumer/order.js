@@ -4,7 +4,10 @@ A function declaration calculates sub total, adds 6% tax, and prints the total i
 
 The following are the current options to order food and drinks: pizza, hot dog, box of fries, drink, more to come.
 
+<<<<<<< HEAD
 <script src = "https://cdn.rawgit.com/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/master/script.js"></script>
+=======
+>>>>>>> master
 <script> 
     let sslink = document.createElement("link"); 
     sslink.href = "../css/style.css";

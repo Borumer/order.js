@@ -1,9 +1,3 @@
-// Define/Redfine methods of predefined objects
-console.log = function(statement) {
-	const outputEl = document.querySelector("#program");
-	outputEl.innerHTML += `${statement} <br>`;
-}
-
 // Get needed elements and store in constant variables
 const firstForm = document.querySelector("form");
 const forms = document.getElementsByTagName("form"); // Stores nodeList of all the orders the user filled out
@@ -12,7 +6,7 @@ const formsParent = document.getElementById("forms"); // Stores div that contain
 // Define changing variables
 let counter = 1;
 
-// Define functions called in input buttons in forms
+// Define functions called in forms
 function duplicateForm() {
 	const newForm = firstForm.cloneNode(true);
 	const newFields = newForm.elements;
@@ -20,34 +14,35 @@ function duplicateForm() {
 	for (let i = 0; i < newFields.length - 1; i++) {
 		newFields[i].value = "";
 		newFields[i].name = firstForm[i].name;
+		newFields[i].onchange = firstForm[i].onchange;
 	}
 	formsParent.insertBefore(newForm, afterEl);
 }
 function orderFood() {
-	checkNull: try {
+	checkNull: try {			
+		let arr = [];
 		// Loops through all forms
-		for (let i = 0; i < forms.length; i++) {
-			currentForm = forms[i];
+		for (let i = 0; i < counter; i++) {
+			let currentForm = forms[i];
 			// Loops through elements in forms
-			for (let i = 0; i < currentForm.length; i++) {
+			for (let j = 0; j < currentForm.length; j++) {
+				let currentElement = currentForm.elements[j];
 				// If the user has not entered a required field don't order		
-				if(currentForm.elements[i].required && currentForm.elements[i].value === "") {
+				if(currentElement.required && currentElement.value === "") {
 					break checkNull;
 				}
 			}
-		}
-		let arr = [];
-		for (let i = 0; i < counter; i++) {
-			arr.push(groupOrder[forms[i].orderType.value + "Order"](
+			arr.push(groupOrder[currentForm.orderType.value + "Order"](
 			{
-					topping: forms[i].orderTopping.value,
-					size: forms[i].size.value,
-					crustType: forms[i].crustType.value,
-					quantity: forms[i].quantity.value,
-					name: forms[i].drink.value
+					topping: currentForm.orderTopping.value,
+					size: currentForm.size.value,
+					crustType: currentForm.crustType.value,
+					quantity: currentForm.quantity.value,
+					name: currentForm.drink.value
 			}
-			));
-		}				
+			));			
+		}
+		groupOrder(arr);				
 	}
 	catch(e) {console.log(e)}	
 }
@@ -64,5 +59,11 @@ function orderAll() {
 function removeOrder(el) {
 	// Call remove method on element to remove
 	el.parentNode.parentNode.removeChild(el.parentNode);
+}
+function enableFields(el) {
+	console.log(siblings(el)[1]);
+	for (let i = 0; i < siblings(el).length; i++) {
+		siblings(el)[i].disabled = false;
+	}
 }
 

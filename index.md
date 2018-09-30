@@ -1,7 +1,6 @@
-<script src = "https://cdn.rawgit.com/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/master/script.js"></script>
 <script> 
     let sslink = document.createElement("link"); 
-    sslink.href = "../css/style.css";
+    sslink.href = "css/style.css";
     sslink.rel = "stylesheet";
     sslink.type = "text/css";
     document.head.appendChild(sslink);
@@ -9,7 +8,7 @@
     let favLink = document.createElement("link");
     favLink.rel = "shortcut icon";
     favLink.type = "images/x-icon";
-    favLink.href = "../images/icon.ico";
+    favLink.href = "images/icon.ico";
     document.head.appendChild(favLink);
 </script>
 
@@ -19,11 +18,11 @@
 
 Order.js is the first ES6 program (through the console) I have made that is hosted on GitHub through Git workflow. The person takes an order through a function call and the price is calculated based on what they ordered and how many items. 
 
-<object width="900" height="270" data="../README.html" type="text/html"></object>
+<object width="900" height="270" data="./README.html" type="text/html"></object>
 <div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
     <form action = "">
         <label for = "orderType">Enter the type of food order: </label>
-        <select name = "orderType" id = "orderType" required>
+        <select onclick = "enableFields(this)" name = "orderType" id = "orderType" required>
             <option value = "">--Select a type--</option>
             <option value = "pizza"> Pizza </option>
             <option value = "hotDog"> Hot Dog </option>
@@ -31,15 +30,15 @@ Order.js is the first ES6 program (through the console) I have made that is host
             <option value = "drink"> Drink </option>
         </select> <br>
         <label for = "orderTopping">Enter your topping: </label>
-        <input type = "text" name = "orderTopping"> <br> 
+        <input disabled type = "text" name = "orderTopping"> <br> 
         <label for = "crustType">Enter your crust: </label>
-        <input type = "text" name = "crustType"> <br>  
+        <input disabled type = "text" name = "crustType"> <br>  
         <label for = "size">Enter the size: </label>
-        <input type = "text" name = "size" required> <br>  
+        <input disabled type = "text" name = "size" required> <br>  
         <label for = "quantity">Enter your quantity: </label>
-        <input type = "text" name = "quantity"> <br>  
+        <input disabled type = "text" name = "quantity"> <br>  
         <label for = "drink">Enter your drink: </label>
-        <input type = "text" name = "drink"> <br>
+        <input disabled type = "text" name = "drink"> <br>
         <br>
         <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
     </form>
@@ -49,8 +48,10 @@ Order.js is the first ES6 program (through the console) I have made that is host
 <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
     <div class = "gt" id = "program"> </div>
 </div>
-<script src = "../scripts/orderIn.js"></script>
-<script src = "../scripts/order.js"></script>
+
+<script src = "./scripts/helperFunctions.js"></script>
+<script src = "scripts/orderIn.js"></script>
+<script src = "scripts/order.js"></script>
 
 [Home](https://knowledgeablekangaroo.github.io)
 
