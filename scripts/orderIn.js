@@ -5,8 +5,8 @@ const afterEl = document.getElementById('writeroot'); // Store element that is p
 const formsParent = document.getElementById("forms"); // Stores div that contains the form elements and input buttons
 // Define changing variables
 let counter = 1;
-console.log(siblings(formsParent))
-// Define functions called in input buttons in forms
+
+// Define functions called in forms
 function duplicateForm() {
 	const newForm = firstForm.cloneNode(true);
 	const newFields = newForm.elements;
@@ -61,9 +61,9 @@ function removeOrder(el) {
 	el.parentNode.parentNode.removeChild(el.parentNode);
 }
 function enableFields(el) {
-	for (let i = 0; i < el.siblings().length; i++) {
+	console.log(siblings(el)[1]);
+	for (let i = 0; i < siblings(el).length; i++) {
 		siblings(el)[i].disabled = false;
 	}
 }
-console.log(siblings(document.querySelector("form").firstChild));
 
