@@ -43,13 +43,13 @@ Order.js is the first ES6 program (through the console) I have made that is host
         <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
     </form>
     <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
-    <input type = "button" value = "Finish Order" onclick = "orderAll()">
+    <input disabled type = "button" value = "Finish Order" onclick = "orderAll()">
 </div>
 <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
     <div class = "gt" id = "program"> </div>
 </div>
 
-<script src = "./scripts/helperFunctions.js"></script>
+<script src = "scripts/helperFunctions.js"></script>
 <script src = "scripts/orderIn.js"></script>
 <script src = "scripts/order.js"></script>
 
