@@ -22,7 +22,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
 <div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
     <form action = "">
         <label for = "orderType">Enter the type of food order: </label>
-        <select name = "orderType" id = "orderType" required>
+        <select onclick = "enableFields(this)" name = "orderType" id = "orderType" required>
             <option value = "">--Select a type--</option>
             <option value = "pizza"> Pizza </option>
             <option value = "hotDog"> Hot Dog </option>
@@ -30,15 +30,15 @@ Order.js is the first ES6 program (through the console) I have made that is host
             <option value = "drink"> Drink </option>
         </select> <br>
         <label for = "orderTopping">Enter your topping: </label>
-        <input type = "text" name = "orderTopping"> <br> 
+        <input disabled type = "text" name = "orderTopping"> <br> 
         <label for = "crustType">Enter your crust: </label>
-        <input type = "text" name = "crustType"> <br>  
+        <input disabled type = "text" name = "crustType"> <br>  
         <label for = "size">Enter the size: </label>
-        <input type = "text" name = "size" required> <br>  
+        <input disabled type = "text" name = "size" required> <br>  
         <label for = "quantity">Enter your quantity: </label>
-        <input type = "text" name = "quantity"> <br>  
+        <input disabled type = "text" name = "quantity"> <br>  
         <label for = "drink">Enter your drink: </label>
-        <input type = "text" name = "drink"> <br>
+        <input disabled type = "text" name = "drink"> <br>
         <br>
         <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
     </form>
@@ -48,6 +48,8 @@ Order.js is the first ES6 program (through the console) I have made that is host
 <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
     <div class = "gt" id = "program"> </div>
 </div>
+
+<script src = "./scripts/helperFunctions.js"></script>
 <script src = "scripts/orderIn.js"></script>
 <script src = "scripts/order.js"></script>
 

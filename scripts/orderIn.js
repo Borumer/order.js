@@ -1,9 +1,3 @@
-// Define/Redfine methods of predefined objects
-console.log = function(statement) {
-	const outputEl = document.querySelector("#program");
-	outputEl.innerHTML += `${statement} <br>`;
-}
-
 // Get needed elements and store in constant variables
 const firstForm = document.querySelector("form");
 const forms = document.getElementsByTagName("form"); // Stores nodeList of all the orders the user filled out
@@ -11,7 +5,7 @@ const afterEl = document.getElementById('writeroot'); // Store element that is p
 const formsParent = document.getElementById("forms"); // Stores div that contains the form elements and input buttons
 // Define changing variables
 let counter = 1;
-
+console.log(siblings(formsParent))
 // Define functions called in input buttons in forms
 function duplicateForm() {
 	const newForm = firstForm.cloneNode(true);
@@ -20,7 +14,7 @@ function duplicateForm() {
 	for (let i = 0; i < newFields.length - 1; i++) {
 		newFields[i].value = "";
 		newFields[i].name = firstForm[i].name;
-		newFiels[i].onkeyup = firstForm[i].onkeyup;
+		newFields[i].onchange = firstForm[i].onchange;
 	}
 	formsParent.insertBefore(newForm, afterEl);
 }
@@ -66,16 +60,10 @@ function removeOrder(el) {
 	// Call remove method on element to remove
 	el.parentNode.parentNode.removeChild(el.parentNode);
 }
-function disableUnnecessaryFields(el) {
-	for (let i = 0; i < forms.length; i++) {
-		for (let j = 0; j < document.querySelectorAll("form input").length; j++) {
-			if (el.value.length > 0) {
-				document.querySelectorAll("form input")[j].disabled = false;
-			}
-			else {
-				document.querySelectorAll("form input")[j].disabled = true;
-			}
-		}
+function enableFields(el) {
+	for (let i = 0; i < el.siblings().length; i++) {
+		siblings(el)[i].disabled = false;
 	}
 }
+console.log(siblings(document.querySelector("form").firstChild));
 
