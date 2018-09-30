@@ -29,9 +29,8 @@ function orderFood() {
 			for (let j = 0; j < currentForm.length; j++) {
 				let currentElement = currentForm.elements[j];
 				// If the user has not entered a required field don't order		
-				if(currentElement.required && currentElement.value === "") {
+				if(currentElement.required && currentElement.value === "")
 					break checkNull;
-				}
 			}
 			arr.push(groupOrder[currentForm.orderType.value + "Order"](
 			{
@@ -67,4 +66,8 @@ function enableFields(el) {
 		submitButton.disabled = false;
 	}
 }
+
+// Call other functions from helperFunctions.js
+for (let i = 0; i < counter; i++) 
+	removeUnnecessary(forms[i]);
 

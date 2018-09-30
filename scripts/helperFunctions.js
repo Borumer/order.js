@@ -30,7 +30,19 @@ Node.prototype.childEls = function() {
 	return li_items;	
 };
 
-const removeUnnecessary = function() {
-	
+const removeUnnecessary = function(elem) {
+	const currOrderTypeEl = elem.orderType;
+	const currentOrderVal = currOrderTypeEl.value;
+
+	// If user selected an order type
+	if (currentOrderVal !== "--Select a type--") {
+		// Loop through select element's siblings in the current form
+		for (let j = 0; j < currOrderTypeEl.siblings().length; j++) {
+			const currentSibling = currOrderTypeEl.siblings()[j];
+			if (currentSibling.name === "crustType" || currentSibling.htmlFor === "crustType") {
+				currentSibling.style.display = "none";
+			}
+		}
+	}
 };
 
