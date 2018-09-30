@@ -61,7 +61,6 @@ function removeOrder(el) {
 	el.parentNode.parentNode.removeChild(el.parentNode);
 }
 function enableFields(el) {
-	console.log(siblings(el)[1]);
 	for (let i = 0; i < siblings(el).length; i++) {
 		siblings(el)[i].disabled = false;
 	}

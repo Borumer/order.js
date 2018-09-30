@@ -14,4 +14,4 @@ const siblings = function(el) {
 	result.splice(result.indexOf(el), 1);
 	return result;	
 };
-console.log(siblings(document.querySelector("form").firstChild));
+
