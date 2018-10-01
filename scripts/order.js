@@ -1,6 +1,4 @@
-String.prototype.toTitleCase = function() {
-	return this.substring(0, 1).toUpperCase() + this.substring(1, this.length).toLowerCase();
-}
+String.prototype.toTitleCase = () => this.substring(0, 1).toUpperCase() + this.substring(1, this.length).toLowerCase();
 
 function groupOrder(orders) {
 	let sideCount = 0;
