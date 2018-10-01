@@ -22,7 +22,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
 <div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
     <form action = "">
         <label for = "orderType">Enter the type of food order: </label>
-        <select onclick = "enableFields(this)" name = "orderType" id = "orderType" required>
+        <select onclick = "enableFields(this); removeUnnecessary(this.parentNode)" name = "orderType" id = "orderType" required>
             <option value = "">--Select a type--</option>
             <option value = "pizza"> Pizza </option>
             <option value = "hotDog"> Hot Dog </option>

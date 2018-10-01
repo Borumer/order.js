@@ -67,7 +67,3 @@ function enableFields(el) {
 	}
 }
 
-// Call other functions from helperFunctions.js
-for (let i = 0; i < counter; i++) 
-	removeUnnecessary(forms[i]);
-

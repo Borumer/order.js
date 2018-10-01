@@ -33,15 +33,13 @@ Node.prototype.childEls = function() {
 const removeUnnecessary = function(elem) {
 	const currOrderTypeEl = elem.orderType;
 	const currentOrderVal = currOrderTypeEl.value;
-
-	// If user selected an order type
-	if (currentOrderVal !== "--Select a type--") {
-		// Loop through select element's siblings in the current form
-		for (let j = 0; j < currOrderTypeEl.siblings().length; j++) {
-			const currentSibling = currOrderTypeEl.siblings()[j];
-			if (currentSibling.name === "crustType" || currentSibling.htmlFor === "crustType") {
-				currentSibling.style.display = "none";
-			}
+	// Loop through select element's siblings in the current form
+	for (let j = 0; j < currOrderTypeEl.siblings().length; j++) {
+		const currentSibling = currOrderTypeEl.siblings()[j];
+		if (currentSibling.name === "crustType") {
+			currentSibling.previousElementSibling.style.display = "none";
+			currentSibling.style.display = "none";
+			currentSibling.nextElementSibling.style.display = "none";
 		}
 	}
 };
