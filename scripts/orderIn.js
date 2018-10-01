@@ -38,7 +38,8 @@ function orderFood() {
 					size: currentForm.size.value,
 					crustType: currentForm.crustType.value,
 					quantity: currentForm.quantity.value,
-					name: currentForm.drink.value
+					name: currentForm.drink.value,
+					condiments: currentForm.condiments.value,
 			}
 			));			
 		}
