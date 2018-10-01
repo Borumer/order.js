@@ -71,15 +71,15 @@
                     <option value = "drink"> Drink </option>
                 </select> <br>
                 <label for = "orderTopping">Enter your topping: </label>
-                <input disabled type = "text" name = "orderTopping"> <br> 
+                <input class = "pizza hotDog" disabled type = "text" name = "orderTopping"> <br> 
                 <label for = "crustType">Enter your crust: </label>
-                <input disabled type = "text" name = "crustType"> <br>  
+                <input class = "pizza" disabled type = "text" name = "crustType"> <br>  
                 <label for = "size">Enter the size: </label>
-                <input disabled type = "text" name = "size" required> <br>  
+                <input class = "pizza hotDog fries drink" disabled type = "text" name = "size" required> <br>  
                 <label for = "quantity">Enter your quantity: </label>
-                <input disabled type = "text" name = "quantity"> <br>  
+                <input class = "pizza hotDog fries drink" disabled type = "text" name = "quantity"> <br>  
                 <label for = "drink">Enter your drink: </label>
-                <input disabled type = "text" name = "drink"> <br>
+                <input class = "drink" disabled type = "text" name = "drink"> <br>
                 <br>
                 <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
             </form>
@@ -89,9 +89,9 @@
         <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
             <div class = "gt" id = "program"> </div>
         </div>
-        <script src = "./scripts/helperFunctions.js"></script>
-        <script src = "./scripts/orderIn.js"></script>
-        <script src = "./scripts/order.js"></script>
+        <script src = "scripts/helperFunctions.js"></script>
+        <script src = "scripts/orderIn.js"></script>
+        <script src = "scripts/order.js"></script>
 
         <p><a href="https://knowledgeablekangaroo.github.io">Home</a></p>
 
