@@ -20,7 +20,6 @@ Node.prototype.childEls = function() {
 	let li_items = [];
 	
 	for (let i = 0; i < list_items.length; i++) {
-
 		// Add all the <li> nodes to an array, skip the text nodes
 		if (list_items[i].nodeType != 3) {
 			li_items.push(list_items[i]);
@@ -36,10 +35,17 @@ const removeUnnecessary = function(elem) {
 	// Loop through select element's siblings in the current form
 	for (let j = 0; j < currOrderTypeEl.siblings().length; j++) {
 		const currentSibling = currOrderTypeEl.siblings()[j];
-		if (currentSibling.name === "crustType") {
-			currentSibling.previousElementSibling.style.display = "none";
-			currentSibling.style.display = "none";
-			currentSibling.nextElementSibling.style.display = "none";
+		if (currentSibling.tagName === "INPUT" && currentSibling.nextElementSibling !== null) {
+			if (!currentSibling.classList.contains(currentOrderVal)) {
+				currentSibling.previousElementSibling.style.display = "none";
+				currentSibling.style.display = "none";
+				currentSibling.nextElementSibling.style.display = "none";
+			}
+			else {
+				currentSibling.previousElementSibling.style.display = "inline";
+				currentSibling.style.display = "inline";
+				currentSibling.nextElementSibling.style.display = "block";				
+			}
 		}
 	}
 };
