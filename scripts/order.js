@@ -29,6 +29,11 @@ function groupOrder(orders) {
 		return "side";
 	};
 
+	const burgerOrder = ({condiments, topping, quantity}) => {
+		console.log(`Order: ${quantity} burgers with ${topping} and ${condiments}`)
+		return "meal";
+	};
+
 	groupOrder.pizzaOrder = pizzaOrder;
 	groupOrder.hotDogOrder = hotDogOrder;
 	groupOrder.friesOrder = friesOrder;
