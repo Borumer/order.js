@@ -64,7 +64,7 @@
             <form action = "">
                 <label for = "orderType">Enter the type of food order: </label>
                 <select onchange = "enableFields(this); removeUnnecessary(this.parentNode);" name = "orderType" id = "orderType" required>
-                    <option selected value = "">--Select a type--</option>
+                    <option value = "">--Select a type--</option>
                     <option value = "pizza"> Pizza </option>
                     <option value = "hotDog"> Hot Dog </option>
                     <option value = "fries"> Fries </option>
@@ -81,8 +81,8 @@
                 <label for = "drink">Enter your drink: </label>
                 <input class = "drink" disabled type = "text" name = "drink"> <br>
                 <label for = "condiments">Enter your condiments: </label>
-                <select class = "hotDog" disabled type = "text" name = "condiments">
-                    <option value = "" selected>--Select a condiment--</option>
+                <select class = "hotDog" disabled name = "condiments" id = "condiments">
+                    <option value = "">--Select a condiment--</option>
                     <option value = "Ketchup"> Ketchup </option>
                     <option value = "Mustard"> Mustard </option>
                     <option value = "Relish"> Relish </option>

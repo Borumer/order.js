@@ -14,8 +14,8 @@ function groupOrder(orders) {
 		return "meal";
 	};
 
-	const hotDogOrder = ({condiments}) => {
-		console.log(`Order: Hot dog with ${condiments}`);
+	const hotDogOrder = ({quantity, condiments}) => {
+		console.log(`Order: ${quantity} hot dogs with ${condiments}`);
 		return "meal";
 	};
 
