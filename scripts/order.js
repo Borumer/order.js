@@ -1,6 +1,6 @@
 String.prototype.toTitleCase = function() {
 	return this.substring(0, 1).toUpperCase() + this.substring(1, this.length).toLowerCase();
-}
+};
 
 function groupOrder(orders) {
 	let sideCount = 0;
@@ -14,8 +14,8 @@ function groupOrder(orders) {
 		return "meal";
 	};
 
-	const hotDogOrder = ({topping}) => {
-		console.log(`Order: Hot dog with ${topping}`);
+	const hotDogOrder = ({quantity, condiments}) => {
+		console.log(`Order: ${quantity} hot dogs with ${condiments}`);
 		return "meal";
 	};
 
@@ -62,7 +62,7 @@ function groupOrder(orders) {
 		const total = subTotal + tax;
 		return total.toFixed(2);
 	};
-
+	
 	if (typeof orders === 'object') { // If the array is initialized, do this
 		// The side count = the length of a filtered array of true booleans for each element returning "side"
 		sideCount = orders.filter(item => item === "side").length;

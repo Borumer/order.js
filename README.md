@@ -6,7 +6,7 @@ The following are the current options to order food and drinks: pizza, hot dog, 
 
 <script> 
 let sslink = document.createElement("link"); 
-sslink.href = "../css/style.css";
+sslink.href = "css/style.css";
 sslink.rel = "stylesheet";
 sslink.type = "text/css";
 document.head.appendChild(sslink);
@@ -14,7 +14,7 @@ document.head.appendChild(sslink);
 let favLink = document.createElement("link");
 favLink.rel = "shortcut icon";
 favLink.type = "images/x-icon";
-favLink.href = "../images/icon.ico";
+favLink.href = "images/icon.ico";
 document.head.appendChild(favLink);
 </script>
 

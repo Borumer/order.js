@@ -3,6 +3,7 @@ const firstForm = document.querySelector("form");
 const forms = document.getElementsByTagName("form"); // Stores nodeList of all the orders the user filled out
 const afterEl = document.getElementById('writeroot'); // Store element that is put after the last order form
 const formsParent = document.getElementById("forms"); // Stores div that contains the form elements and input buttons
+const submitButton = formsParent.childEls().pop(); // Use customized childEls method to get last ELEMENT child of formsParent
 // Define changing variables
 let counter = 1;
 
@@ -28,9 +29,8 @@ function orderFood() {
 			for (let j = 0; j < currentForm.length; j++) {
 				let currentElement = currentForm.elements[j];
 				// If the user has not entered a required field don't order		
-				if(currentElement.required && currentElement.value === "") {
+				if(currentElement.required && currentElement.value === "")
 					break checkNull;
-				}
 			}
 			arr.push(groupOrder[currentForm.orderType.value + "Order"](
 			{
@@ -38,9 +38,10 @@ function orderFood() {
 					size: currentForm.size.value,
 					crustType: currentForm.crustType.value,
 					quantity: currentForm.quantity.value,
-					name: currentForm.drink.value
+					name: currentForm.drink.value,
+					condiments: currentForm.condiments.value,
 			}
-			));			
+			));
 		}
 		groupOrder(arr);				
 	}
@@ -61,9 +62,9 @@ function removeOrder(el) {
 	el.parentNode.parentNode.removeChild(el.parentNode);
 }
 function enableFields(el) {
-	console.log(siblings(el)[1]);
-	for (let i = 0; i < siblings(el).length; i++) {
-		siblings(el)[i].disabled = false;
+	for (let i = 0; i < el.siblings().length; i++) {
+		el.siblings()[i].disabled = false;
+		submitButton.disabled = false;
 	}
 }
 
