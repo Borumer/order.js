@@ -41,7 +41,7 @@ function orderFood() {
 					name: currentForm.drink.value,
 					condiments: currentForm.condiments.value,
 			}
-			));			
+			));
 		}
 		groupOrder(arr);				
 	}
