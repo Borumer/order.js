@@ -8,7 +8,8 @@ Element.prototype.siblings = function() {
 	let result = [],
     node = this.parentNode.firstChild;
 	while (node) { // While node's parent's children is not the same node
-	    result.push(node);
+	    if (node.nodeType !== 3) 
+	    	result.push(node);
    		node = node.nextSibling;
 	}
 	result.splice(result.indexOf(this), 1);
@@ -34,8 +35,8 @@ const removeUnnecessary = function(elem) {
 	const currentOrderVal = currOrderTypeEl.value;
 	// Loop through select element's siblings in the current form
 	for (let j = 0; j < currOrderTypeEl.siblings().length; j++) {
-		const currentSibling = currOrderTypeEl.siblings()[j];
-		if (currentSibling.tagName === "INPUT" && currentSibling.nextElementSibling !== null) {
+		let currentSibling = currOrderTypeEl.siblings()[j];
+		if (currentSibling.tagName === "SELECT" || currentSibling.tagName === "INPUT" && currentSibling.nextElementSibling !== null) {
 			if (!currentSibling.classList.contains(currentOrderVal)) {
 				currentSibling.previousElementSibling.style.display = "none";
 				currentSibling.style.display = "none";

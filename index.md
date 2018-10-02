@@ -40,7 +40,13 @@ Order.js is the first ES6 program (through the console) I have made that is host
         <label for = "drink">Enter your drink: </label>
         <input class = "drink" disabled type = "text" name = "drink"> <br>
         <label for = "condiments">Enter your condiments: </label>
-        <input class = "hotDog" disabled type = "text" name = "condiments"> <br>
+        <select class = "hotDog" disabled type = "text" name = "condiments">
+            <option value = "" selected>--Select a condiment--</option>
+            <option value = "Ketchup"> Ketchup </option>
+            <option value = "Mustard"> Mustard </option>
+            <option value = "Relish"> Relish </option>
+            <option value = "Chili"> Chili </option>
+        </select> <br>
         <br>
         <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
     </form>
