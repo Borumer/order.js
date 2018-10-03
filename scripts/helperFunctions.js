@@ -4,7 +4,7 @@ console.log = function(statement) {
 	outputEl.innerHTML += `${statement} <br>`;
 };
 
-Element.prototype.siblings = function() {
+Node.prototype.siblings = function() {
 	let result = [],
     node = this.parentNode.firstChild;
 	while (node) { // While node's parent's children is not the same node

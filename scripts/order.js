@@ -38,7 +38,7 @@ function groupOrder(orders) {
 	groupOrder.hotDogOrder = hotDogOrder;
 	groupOrder.friesOrder = friesOrder;
 	groupOrder.drinkOrder = addDrink;
-	groupOrder.burgerOrder = burgerOrderOrder;
+	groupOrder.burgerOrder = burgerOrder;
 
 	const getSubTotal = (itemCount) => {
 		const mealCount = itemCount - sideCount; // Calculates amount of non-sides

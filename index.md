@@ -22,26 +22,34 @@ Order.js is the first ES6 program (through the console) I have made that is host
 <div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
     <form action = "">
         <label for = "orderType">Enter the type of food order: </label>
-        <select onclick = "enableFields(this); removeUnnecessary(this.parentNode)" name = "orderType" id = "orderType" required>
+        <select onchange = "enableFields(this); removeUnnecessary(this.parentNode);" name = "orderType" id = "orderType" required>
             <option value = "">--Select a type--</option>
             <option value = "pizza"> Pizza </option>
             <option value = "hotDog"> Hot Dog </option>
             <option value = "fries"> Fries </option>
             <option value = "drink"> Drink </option>
+            <option value = "burger"> Burger </option>
         </select> <br>
         <label for = "orderTopping">Enter your topping: </label>
-        <input class = "pizza fries" disabled type = "text" name = "orderTopping"> <br> 
+        <select class = "pizza fries burger" disabled id = "orderTopping" name = "orderTopping">
+            <option value = "">--Select a Topping--</option>
+            <option value = "pepperoni"> Pepperoni </option>
+            <option value = "mushroom">Mushroom</option>
+            <option value = "veggie">Vegetable</option>
+            <option value = "sausage">Sausage</option>
+            <option value = "">None</option>
+        </select> <br> 
         <label for = "crustType">Enter your crust: </label>
         <input class = "pizza" disabled type = "text" name = "crustType"> <br>  
         <label for = "size">Enter the size: </label>
         <input class = "pizza fries drink" disabled type = "text" name = "size" required> <br>  
         <label for = "quantity">Enter your quantity: </label>
-        <input class = "pizza hotDog fries drink" disabled type = "text" name = "quantity"> <br>  
+        <input class = "pizza hotDog fries drink burger" disabled type = "text" name = "quantity"> <br>  
         <label for = "drink">Enter your drink: </label>
         <input class = "drink" disabled type = "text" name = "drink"> <br>
         <label for = "condiments">Enter your condiments: </label>
-        <select class = "hotDog" disabled name = "condiments" id = "condiments">
-            <option value = "" selected>--Select a condiment--</option>
+        <select class = "hotDog burger" disabled name = "condiments" id = "condiments">
+            <option value = "">--Select a condiment--</option>
             <option value = "Ketchup"> Ketchup </option>
             <option value = "Mustard"> Mustard </option>
             <option value = "Relish"> Relish </option>
