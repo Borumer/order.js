@@ -49,7 +49,14 @@ const removeUnnecessary = function(elem) {
 				currentSibling.style.display = "inline";
 				currentSibling.nextElementSibling.style.display = "block";				
 			}
-		}
+		}	
 	}
 };
+
+function enableFields(el) {
+	for (let i = 0; i < el.siblings().length; i++) {
+		el.siblings()[i].disabled = false;
+		submitButton.disabled = false;
+	}
+}
 
