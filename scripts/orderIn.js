@@ -61,10 +61,4 @@ function removeOrder(el) {
 	// Call remove method on element to remove
 	el.parentNode.parentNode.removeChild(el.parentNode);
 }
-function enableFields(el) {
-	for (let i = 0; i < el.siblings().length; i++) {
-		el.siblings()[i].disabled = false;
-		submitButton.disabled = false;
-	}
-}
 

@@ -4,7 +4,7 @@ console.log = function(statement) {
 	outputEl.innerHTML += `${statement} <br>`;
 };
 
-Element.prototype.siblings = function() {
+Node.prototype.siblings = function() {
 	let result = [],
     node = this.parentNode.firstChild;
 	while (node) { // While node's parent's children is not the same node
@@ -36,7 +36,9 @@ const removeUnnecessary = function(elem) {
 	// Loop through select element's siblings in the current form
 	for (let j = 0; j < currOrderTypeEl.siblings().length; j++) {
 		let currentSibling = currOrderTypeEl.siblings()[j];
-		if (currentSibling.tagName === "SELECT" || currentSibling.tagName === "INPUT" && currentSibling.nextElementSibling !== null) {
+		const arr = ["SELECT", "TEXTAREA", "INPUT", "OUTPUT", "OPTGROUP", "FIELDSET", "LEGEND", "DATALIST"];
+
+		if (arr.includes(currentSibling.tagName) && currentSibling.nextElementSibling !== null) {
 			if (!currentSibling.classList.contains(currentOrderVal)) {
 				currentSibling.previousElementSibling.style.display = "none";
 				currentSibling.style.display = "none";
@@ -50,4 +52,11 @@ const removeUnnecessary = function(elem) {
 		}
 	}
 };
+
+function enableFields(el) {
+	for (let i = 0; i < el.siblings().length; i++) {
+		el.siblings()[i].disabled = false;
+		submitButton.disabled = false;
+	}
+}
 

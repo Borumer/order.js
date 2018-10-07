@@ -69,6 +69,7 @@
                     <option value = "hotDog"> Hot Dog </option>
                     <option value = "fries"> Fries </option>
                     <option value = "drink"> Drink </option>
+                    <option value = "burger"> Burger </option>
                 </select> <br>
                 <label for = "orderTopping">Enter your topping: </label>
                 <select class = "pizza fries" disabled id = "orderTopping" name = "orderTopping">
@@ -84,11 +85,11 @@
                 <label for = "size">Enter the size: </label>
                 <input class = "pizza fries drink" disabled type = "text" name = "size" required> <br>  
                 <label for = "quantity">Enter your quantity: </label>
-                <input class = "pizza hotDog fries drink" disabled type = "text" name = "quantity"> <br>  
+                <input class = "pizza hotDog fries drink burger" disabled type = "text" name = "quantity"> <br>  
                 <label for = "drink">Enter your drink: </label>
                 <input class = "drink" disabled type = "text" name = "drink"> <br>
                 <label for = "condiments">Enter your condiments: </label>
-                <select class = "hotDog" disabled name = "condiments" id = "condiments">
+                <select class = "hotDog burger" disabled name = "condiments" id = "condiments">
                     <option value = "">--Select a condiment--</option>
                     <option value = "Ketchup"> Ketchup </option>
                     <option value = "Mustard"> Mustard </option>
@@ -97,6 +98,7 @@
                 </select> <br>
                 <br>
                 <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
+                <textarea style = "display: none"></textarea>
             </form>
             <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
             <input disabled type = "button" value = "Finish Order" onclick = "orderAll()">
