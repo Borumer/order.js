@@ -49,7 +49,7 @@ const removeUnnecessary = function(elem) {
 				currentSibling.style.display = "inline";
 				currentSibling.nextElementSibling.style.display = "block";				
 			}
-		}
+		}	
 	}
 };
 
