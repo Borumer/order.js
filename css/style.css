@@ -866,3 +866,8 @@ a:hover {
 .site-footer-credits {
 	color: #819198
 }
+
+select, input {
+	margin: 0.1em auto;
+}
+
