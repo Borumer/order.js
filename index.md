@@ -42,7 +42,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
         <label for = "crustType">Enter your crust: </label>
         <input class = "pizza" disabled type = "text" name = "crustType"> <br>  
         <label for = "size">Enter the size: </label>
-        <input class = "pizza fries drink" disabled type = "text" name = "size" required> <br>  
+        <input class = "pizza fries drink" disabled type = "text" name = "size"> <br>  
         <label for = "quantity">Enter your quantity: </label>
         <input class = "pizza hotDog fries drink burger" disabled type = "text" name = "quantity"> <br>  
         <label for = "drink">Enter your drink: </label>
@@ -61,6 +61,12 @@ Order.js is the first ES6 program (through the console) I have made that is host
     </form>
     <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
     <input disabled type = "button" value = "Finish Order" onclick = "orderAll()">
+    <fieldset>
+        <legend>Personal: </legend>
+        <label for = "name">Name: </label><input name = "name" type="text"><br>
+        <label for = "email">Email: </label><input type="text"><br>
+        <label for = "" <input type="text">
+    </fieldset>
 </div>
 <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
     <div class = "gt" id = "program"> </div>
