@@ -57,10 +57,9 @@ Order.js is the first ES6 program (through the console) I have made that is host
         </select> <br>
         <br>
         <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
-        <textarea style = "display: none"></textarea>
     </form>
     <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
-    <input disabled type = "button" value = "Finish Order" onclick = "orderAll()">
+    <input id = "finish-order" disabled type = "button" value = "Finish Order" onclick = "orderAll()">
     <fieldset>
         <legend>Personal: </legend>
         <label for = "name">Name: </label><input name = "name" type="text"><br>
