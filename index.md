@@ -18,7 +18,7 @@
 
 Order.js is the first ES6 program (through the console) I have made that is hosted on GitHub through Git workflow. The person takes an order through a function call and the price is calculated based on what they ordered and how many items. 
 
-<object width="900" height="270" data="./README.html" type="text/html"></object>
+<object width = "900" height = "270" data = "README.html" type = "text/html"></object>
 <div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
     <form action = "">
         <label for = "orderType">Enter the type of food order: </label>
@@ -64,8 +64,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
     <fieldset>
         <legend>Personal: </legend>
         <label for = "name">Name: </label><input name = "name" type="text"><br>
-        <label for = "email">Email: </label><input type="text"><br>
-        <label for = "" <input type="text">
+        <label for = "email">Email: </label><input name = "email" type = "email"><br>
     </fieldset>
 </div>
 <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
