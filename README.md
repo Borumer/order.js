@@ -14,7 +14,7 @@ The following are the current options to order food and drinks:
 
 <script> 
 	let sslink = document.createElement("link"); 
-	sslink.href = "css/style.css";
+	sslink.href = "css/normalize.css";
 	sslink.rel = "stylesheet";
 	sslink.type = "text/css";
 	document.head.appendChild(sslink);

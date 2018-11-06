@@ -485,25 +485,25 @@ th {
 }
 
 .highlight .nv {
-	color: #008080
+	color: #008080;
 }
 
 .highlight .ow {
 	color: #000000;
-	font-weight: bold
+	font-weight: bold;
 }
 
 .highlight .o {
 	color: #000000;
-	font-weight: bold
+	font-weight: bold;
 }
 
 .highlight .w {
-	color: #bbbbbb
+	color: #bbbbbb;
 }
 
 .highlight {
-	background-color: #f8f8f8
+	background-color: #f8f8f8;
 }
 
 * {
