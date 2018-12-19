@@ -31,18 +31,19 @@
 </head>
 
 <body>
+    <script src = 'https://'></script>
     <script> 
-        let sslink = document.createElement("link"); 
-        sslink.href = "css/normalize.css";
-        sslink.rel = "stylesheet";
-        sslink.type = "text/css";
-        document.head.appendChild(sslink);
+        // let sslink = document.createElement("link"); 
+        // sslink.href = "css/normalize.css";
+        // sslink.rel = "stylesheet";
+        // sslink.type = "text/css";
+        // document.head.appendChild(sslink);
 
-        let favLink = document.createElement("link");
-        favLink.rel = "shortcut icon";
-        favLink.type = "images/x-icon";
-        favLink.href = "images/icon.ico";
-        document.head.appendChild(favLink);
+        // let favLink = document.createElement("link");
+        // favLink.rel = "shortcut icon";
+        // favLink.type = "images/x-icon";
+        // favLink.href = "images/icon.ico";
+        // document.head.appendChild(favLink);
     </script>
 
     <section class="page-header">
@@ -60,7 +61,7 @@
 
         <object width="900" height="270" data="README.html" type="text/html"></object>
         <div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
-            <form action = "">
+            <form>
                 <label for = "orderType">Enter the type of food order: </label>
                 <select onchange = "enableFields(this); removeUnnecessary(this.parentNode);" name = "orderType" id = "orderType" required>
                     <option value = "">--Select a type--</option>
@@ -102,8 +103,14 @@
             <input id = "finish-order" disabled type = "button" value = "Finish Order" onclick = "orderAll()">
             <fieldset>
                 <legend>Personal: </legend>
-                <label for = "name">Name: </label><input name = "name" type="text"><br>
-                <label for = "email">Email: </label><input type="text"><br>
+                <p>
+                    <label for = "name">Name: </label>
+                    <input name = "name" type = "text">
+                </p>
+                <p>
+                    <label for = "email">Email: </label>
+                    <input id = 'email' name = "email" type = "text">
+                </p>
             </fieldset>
         </div>
         <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
