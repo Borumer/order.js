@@ -65,7 +65,8 @@ function groupOrder(orders) {
 	
 	if (typeof orders === 'object') { // If the array is initialized, do this
 		// The side count = the length of a filtered array of true booleans for each element returning "side"
-		sideCount = orders.filter(item => item === "side").length;
+		sideCount = orders.map(item => item * item.quantity);
+		sideCount += orders.filter(item => item === "side").length;
 		console.log(`\nYour total is \$${getTotal(orders.length)}. \nEnjoy your meal!\n\n`);
 	}
 }
