@@ -15,21 +15,25 @@ function groupOrder(orders) {
 	};
 
 	const hotDogOrder = ({quantity, condiments}) => {
+		sideCount += quantity - 1;
 		console.log(`Order: ${quantity} hot dogs with ${condiments}`);
 		return "meal";
 	};
 
 	const friesOrder = ({quantity, size}) => {
+		sideCount += quantity - 1;
 		console.log(`Side: ${quantity} ${size} boxes of french fries`);
 		return "side";
 	};
 
 	const addDrink = ({name, quantity}) => {
+		sideCount += quantity - 1;
 		console.log(`Side Drink: ${quantity} ${name}`);
 		return "side";
 	};
 
 	const burgerOrder = ({condiments, quantity}) => {
+		sideCount += quantity - 1;
 		console.log(`Order: ${quantity} burgers with ${condiments}`)
 		return "meal";
 	};
@@ -65,7 +69,6 @@ function groupOrder(orders) {
 	
 	if (typeof orders === 'object') { // If the array is initialized, do this
 		// The side count = the length of a filtered array of true booleans for each element returning "side"
-		sideCount = orders.map(item => item * item.quantity);
 		sideCount += orders.filter(item => item === "side").length;
 		console.log(`\nYour total is \$${getTotal(orders.length)}. \nEnjoy your meal!\n\n`);
 	}
