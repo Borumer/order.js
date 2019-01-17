@@ -62,17 +62,20 @@
                 <select class = "pizza" disabled id = "orderTopping" name = "orderTopping">
                     <option value = "">--Select a Topping--</option>
                     <option value = "pepperoni"> Pepperoni </option>
-                    <option value = "mushroom">Mushroom</option>
-                    <option value = "veggie">Vegetable</option>
-                    <option value = "sausage">Sausage</option>
-                    <option value = "">None</option>
+                    <option value = "mushroom"> Mushroom </option>
+                    <option value = "veggie"> Vegetable </option>
+                    <option value = "sausage"> Sausage </option>
+                    <option value = "anchovy"> Anchovy </option>
+                    <option value = "sun-dried"> Sun Dried Tomatoes </option>
+                    <option value = "fresh-basil"> Fresh Basil </option>
+                    <option value = ""> None </option>
                 </select> <br> 
                 <label for = "crustType">Enter your crust: </label>
                 <input class = "pizza" disabled type = "text" name = "crustType"> <br>  
                 <label for = "size">Enter the size: </label>
                 <input class = "pizza fries drink" disabled type = "text" name = "size"> <br>  
                 <label for = "quantity">Enter your quantity: </label>
-                <input class = "pizza hotDog fries drink burger" disabled type = "text" name = "quantity"> <br>  
+                <input class = "pizza hotDog fries drink burger" disabled type = "number" name = "quantity" min = "1" max = "30" value = "1"> <br>  
                 <label for = "drink">Enter your drink: </label>
                 <input class = "drink" disabled type = "text" name = "drink"> <br>
                 <label for = "condiments">Enter your condiments: </label>
@@ -83,7 +86,10 @@
                     <option value = "Relish"> Relish </option>
                     <option value = "Chili"> Chili </option>
                 </select> <br>
-                <br>
+                <label for="doneness">How do you want your patty cooked? </label>
+                <span>Rare</span>
+                <input disabled type="range" class = "burger" name="doneness" id="doneness" value="3" min="1" max="5">
+                <span>Well-Done</span> <br>
                 <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
             </form>
             <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />

@@ -38,13 +38,28 @@ const removeUnnecessary = function(elem) {
 		let currentSibling = currOrderTypeEl.siblings()[j];
 		const arr = ["SELECT", "TEXTAREA", "INPUT", "OUTPUT", "OPTGROUP", "DATALIST"];
 
+		// If it is a form element that is specific to the food order
 		if (arr.includes(currentSibling.tagName) && currentSibling.nextElementSibling !== null) {
-			if (!currentSibling.classList.contains(currentOrderVal)) {
+			// If the element contains the selected food order's name class
+			if (currentSibling.matches('input[type="range"]')) {
+				if (currentSibling.classList.contains(currentOrderVal)) {
+					currentSibling.previousElementSibling.previousElementSibling.style.display = "inline";
+					currentSibling.previousElementSibling.style.display = "inline";
+					currentSibling.style.display = "inline";
+					currentSibling.nextElementSibling.style.display = "inline";
+					currentSibling.nextElementSibling.nextElementSibling.style.display = "block";
+				} else {
+					currentSibling.previousElementSibling.previousElementSibling.style.display = "none";
+					currentSibling.previousElementSibling.style.display = "none";
+					currentSibling.style.display = "none";
+					currentSibling.nextElementSibling.style.display = "none";
+					currentSibling.nextElementSibling.nextElementSibling.style.display = "none";
+				}
+			} else if (!currentSibling.classList.contains(currentOrderVal)) {
 				currentSibling.previousElementSibling.style.display = "none";
 				currentSibling.style.display = "none";
-				currentSibling.nextElementSibling.style.display = "none";
-			}
-			else {
+				currentSibling.nextElementSibling.style.display = "none";				
+			} else {
 				currentSibling.previousElementSibling.style.display = "inline";
 				currentSibling.style.display = "inline";
 				currentSibling.nextElementSibling.style.display = "block";				
