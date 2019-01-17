@@ -76,7 +76,6 @@ function groupOrder(orders) {
 	};
 	
 	if (typeof orders === 'object') { // If the array is initialized, do this
-		console.log(orders.constructor)
 		const mealCount = orders.reduce((av, cv) => {
 			if (cv.mealCount) {
 				return cv.mealCount + av;

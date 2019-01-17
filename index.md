@@ -14,7 +14,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
 
 <object width = "900" height = "270" data = "README.html" type = "text/html"></object>
 <div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
-    <form action = "">
+    <form>
         <label for = "orderType">Enter the type of food order: </label>
         <select onchange = "enableFields(this); removeUnnecessary(this.parentNode);" name = "orderType" id = "orderType" required>
             <option value = "">--Select a type--</option>
@@ -41,7 +41,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
         <label for = "size">Enter the size: </label>
         <input class = "pizza fries drink" disabled type = "text" name = "size"> <br>  
         <label for = "quantity">Enter your quantity: </label>
-        <input class = "pizza hotDog fries drink burger" disabled type = "number" name = "quantity" min = "1" max = "30" value = "1"> <br> 
+        <input class = "pizza hotDog fries drink burger" disabled type = "number" name = "quantity" min = "1" max = "30" value = "1"> <br>  
         <label for = "drink">Enter your drink: </label>
         <input class = "drink" disabled type = "text" name = "drink"> <br>
         <label for = "condiments">Enter your condiments: </label>
@@ -55,8 +55,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
         <label for="doneness">How do you want your patty cooked? </label>
         <span>Rare</span>
         <input disabled type="range" class = "burger" name="doneness" id="doneness" value="3" min="1" max="5">
-        <span>Well-Done</span>
-        <br>
+        <span>Well-Done</span> <br>
         <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
     </form>
     <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
