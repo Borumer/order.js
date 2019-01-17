@@ -76,19 +76,23 @@ function groupOrder(orders) {
 	};
 	
 	if (typeof orders === 'object') { // If the array is initialized, do this
+		console.log(orders.constructor)
 		const mealCount = orders.reduce((av, cv) => {
 			if (cv.mealCount) {
 				return cv.mealCount + av;
+			} else if (cv && !cv.mealCount) {
+				return cv + av;
 			}
 		});
 		const sideCount = orders.reduce((av, cv) => {
 			if (cv.sideCount) {
 				return cv.sideCount + av;
+			} else if (cv && !cv.sideCount) {
+				return cv + av;
 			}
 		});
 		// The side count = the length of a filtered array of true booleans for each element returning "side"
-		console.log(`\nYour total is \$${getTotal(mealCount, sideCount)}. \nEnjoy your meal!\n\n`);
-	}
+		console.log(`\nYour total is \$${getTotal(mealCount, sideCount)}. \nEnjoy your meal!\n\n`);	}
 }
  
 groupOrder(); // Calls undefined function for nested function commands

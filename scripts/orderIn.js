@@ -43,7 +43,9 @@ function orderFood() {
 			}
 			));
 		}
-		groupOrder(arr);				
+		groupOrder(arr);
+		console.log('arr: ' + JSON.stringify(arr));				
+		console.log('arr: ' + JSON.stringify(arr[0]));						
 	}
 	catch(e) {console.log(e)}	
 }
