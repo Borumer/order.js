@@ -1,10 +1,4 @@
-<script> 
-    let favLink = document.createElement("link");
-    favLink.rel = "shortcut icon";
-    favLink.type = "images/x-icon";
-    favLink.href = "images/icon.ico";
-    document.head.appendChild(favLink);
-</script>
+<script src = "https://cdn.jsdelivr.net/gh/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/script.js"></script>
 
 # Order.js
 
