@@ -61,9 +61,8 @@ function removeOrder(el) {
 	el.parentNode.parentNode.removeChild(el.parentNode);
 }
 function enableFields(el) {
-	for (let i = 0; i < el.siblings().length; i++) {
-		el.siblings()[i].disabled = false;
-		submitButton.disabled = false;
-	}
+	el.siblings().forEach(element => {
+		element.disabled = submitButton.disabled = false;
+	});
 }
 

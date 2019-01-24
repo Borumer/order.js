@@ -1,4 +1,4 @@
-// Define/Redfine methods of predefined objects
+// Define/Redefine methods of predefined objects (helper methods)
 console.log = function(statement) {
 	const outputEl = document.querySelector("#program");
 	outputEl.innerHTML += `${statement} <br>`;
@@ -29,6 +29,8 @@ Node.prototype.childEls = function() {
 	return li_items;	
 };
 
+
+// Define helper functions
 const removeUnnecessary = function(elem) {
 	const currOrderTypeEl = elem.orderType;
 	const currentOrderVal = currOrderTypeEl.value;
