@@ -1,16 +1,4 @@
-<script> 
-    let sslink = document.createElement("link"); 
-    sslink.href = "css/style.css";
-    sslink.rel = "stylesheet";
-    sslink.type = "text/css";
-    document.head.appendChild(sslink);
-
-    let favLink = document.createElement("link");
-    favLink.rel = "shortcut icon";
-    favLink.type = "images/x-icon";
-    favLink.href = "images/icon.ico";
-    document.head.appendChild(favLink);
-</script>
+<script src = "https://cdn.jsdelivr.net/gh/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/script.js"></script>
 
 # Order.js
 
@@ -18,32 +6,59 @@
 
 Order.js is the first ES6 program (through the console) I have made that is hosted on GitHub through Git workflow. The person takes an order through a function call and the price is calculated based on what they ordered and how many items. 
 
-<object width="900" height="270" data="./README.html" type="text/html"></object>
+<object width = "900" height = "270" data = "README.html" type = "text/html"></object>
 <div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
-    <form action = "">
+    <form>
         <label for = "orderType">Enter the type of food order: </label>
-        <select onclick = "enableFields(this); removeUnnecessary(this.parentNode)" name = "orderType" id = "orderType" required>
+        <select onchange = "enableFields(this); removeUnnecessary(this.parentNode);" name = "orderType" id = "orderType" required>
             <option value = "">--Select a type--</option>
             <option value = "pizza"> Pizza </option>
             <option value = "hotDog"> Hot Dog </option>
             <option value = "fries"> Fries </option>
             <option value = "drink"> Drink </option>
+            <option value = "burger"> Burger </option>
         </select> <br>
         <label for = "orderTopping">Enter your topping: </label>
-        <input disabled type = "text" name = "orderTopping"> <br> 
+        <select class = "pizza" disabled id = "orderTopping" name = "orderTopping">
+            <option value = "">--Select a Topping--</option>
+            <option value = "pepperoni"> Pepperoni </option>
+            <option value = "mushroom"> Mushroom </option>
+            <option value = "veggie"> Vegetable </option>
+            <option value = "sausage"> Sausage </option>
+            <option value = "anchovy"> Anchovy </option>
+            <option value = "sun-dried"> Sun Dried Tomatoes </option>
+            <option value = "fresh-basil"> Fresh Basil </option>
+            <option value = ""> None </option>
+        </select> <br> 
         <label for = "crustType">Enter your crust: </label>
-        <input disabled type = "text" name = "crustType"> <br>  
+        <input class = "pizza" disabled type = "text" name = "crustType"> <br>  
         <label for = "size">Enter the size: </label>
-        <input disabled type = "text" name = "size" required> <br>  
+        <input class = "pizza fries drink" disabled type = "text" name = "size"> <br>  
         <label for = "quantity">Enter your quantity: </label>
-        <input disabled type = "text" name = "quantity"> <br>  
+        <input class = "pizza hotDog fries drink burger" disabled type = "number" name = "quantity" min = "1" max = "30" value = "1"> <br>  
         <label for = "drink">Enter your drink: </label>
-        <input disabled type = "text" name = "drink"> <br>
-        <br>
+        <input class = "drink" disabled type = "text" name = "drink"> <br>
+        <label for = "condiments">Enter your condiments: </label>
+        <select class = "hotDog burger fries" disabled name = "condiments" id = "condiments">
+            <option value = "">--Select a condiment--</option>
+            <option value = "Ketchup"> Ketchup </option>
+            <option value = "Mustard"> Mustard </option>
+            <option value = "Relish"> Relish </option>
+            <option value = "Chili"> Chili </option>
+        </select> <br>
+        <label for="doneness">How do you want your patty cooked? </label>
+        <span>Rare</span>
+        <input disabled type="range" class = "burger" name="doneness" id="doneness" value="3" min="1" max="5">
+        <span>Well-Done</span> <br>
         <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
     </form>
     <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
-    <input disabled type = "button" value = "Finish Order" onclick = "orderAll()">
+    <input id = "finish-order" disabled type = "button" value = "Finish Order" onclick = "orderAll()">
+    <fieldset>
+        <legend>Personal: </legend>
+        <label for = "name">Name: </label><input name = "name" type="text"><br>
+        <label for = "email">Email: </label><input name = "email" type = "email"><br>
+    </fieldset>
 </div>
 <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
     <div class = "gt" id = "program"> </div>

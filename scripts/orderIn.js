@@ -38,9 +38,10 @@ function orderFood() {
 					size: currentForm.size.value,
 					crustType: currentForm.crustType.value,
 					quantity: currentForm.quantity.value,
-					name: currentForm.drink.value
+					name: currentForm.drink.value,
+					condiments: currentForm.condiments.value,
 			}
-			));			
+			));
 		}
 		groupOrder(arr);				
 	}
@@ -59,10 +60,5 @@ function orderAll() {
 function removeOrder(el) {
 	// Call remove method on element to remove
 	el.parentNode.parentNode.removeChild(el.parentNode);
-}
-function enableFields(el) {
-	el.siblings().forEach(element => {
-		element.disabled = submitButton.disabled = false;
-	});
 }
 
