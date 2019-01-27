@@ -9,7 +9,6 @@ function groupOrder(orders) {
 
 	const pizzaOrder = ({size, crustType, topping, quantity}) => {
 		quantity = Math.round(parseInt(quantity));
-		mealCount += quantity;
 
 		if (topping === "") {
 			console.log(`Order: ${quantity} ${size.toTitleCase()} ${crustType.toLowerCase()} crust plain cheese pizza`);
@@ -17,35 +16,35 @@ function groupOrder(orders) {
 			console.log(`Order: ${quantity} ${size.toTitleCase()} ${crustType.toLowerCase()} crust ${topping} pizza`);
 		}
 
-		return mealCount;	
+		return {mealCount: quantity};	
 	};
 
 	const hotDogOrder = ({quantity, condiments}) => {
 		quantity = Math.round(parseInt(quantity));
-		mealCount += quantity;
+
 		console.log(`Order: ${quantity} hot dogs with ${condiments}`);
-		return mealCount;
+		return {mealCount: quantity};
 	};
 
 	const friesOrder = ({quantity, size}) => {
 		quantity = Math.round(parseInt(quantity));
-		sideCount += quantity;
+
 		console.log(`Side: ${quantity} ${size} boxes of french fries`);
-		return sideCount;
+		return {sideCount: quantity};
 	};
 
 	const addDrink = ({name, quantity}) => {
 		quantity = Math.round(parseInt(quantity));
-		sideCount += quantity;
-		console.log(`Side Drink: ${quantity} ${name}`);
-		return drinkCount;
+
+		console.log(`Drink: ${quantity} ${name}`);
+		return {drinkCount: quantity};
 	};
 
 	const burgerOrder = ({condiments, quantity}) => {
 		quantity = Math.round(parseInt(quantity));
-		mealCount += quantity;
+
 		console.log(`Order: ${quantity} burgers with ${condiments}`)
-		return mealCount;
+		return {mealCount: quantity};
 	};
 
 	groupOrder.pizzaOrder = pizzaOrder;
@@ -67,43 +66,39 @@ function groupOrder(orders) {
 	};
 
 	const getTax = (mealCount, sideCount, drinkCount) => {
-		const tax = 0.06 * getSubTotal(mealCount, sideCount);
+		const tax = 0.06 * getSubTotal(mealCount, sideCount, drinkCount);
 		return tax;
 	};
 
 	const getTotal = (mealCount, sideCount, drinkCount) => { // Adds the subtotal to the tax and return the total in dollar format
-		const tax = getTax(mealCount, sideCount);
-		const subTotal = getSubTotal(mealCount, sideCount);
+		const tax = getTax(mealCount, sideCount, drinkCount);
+		const subTotal = getSubTotal(mealCount, sideCount, drinkCount);
 		const total = subTotal + tax;
 		return total.toFixed(2);
 	};
 	
 	if (typeof orders === 'object') { // If the array is initialized, do this
+		console.log(orders[0].mealCount);
 		const mealCount = orders.reduce((av, cv) => {
 			if (cv.mealCount) {
 				return cv.mealCount + av;
-			} else if (cv && !cv.mealCount) {
-				return cv + av;
 			}
 		});
 		const sideCount = orders.reduce((av, cv) => {
 			if (cv.sideCount) {
 				return cv.sideCount + av;
-			} else if (cv) {
-				return cv + av;
 			}
 		});
 		const drinkCount = orders.reduce((av, cv) => {
 			if (cv.drinkCount) {
-				console.log('is: object');
 				return cv.drinkCount + av;
-			} else if (cv) {
-				console.log('is: number')
-				return cv + av;
-			} 
+			}
 		});
-		// The side count = the length of a filtered array of true booleans for each element returning "side"
-		console.log(`\nYour total is \$${getTotal(mealCount, sideCount, drinkCount)}. \nEnjoy your meal!\n\n`);	}
+		
+		let total = getTotal(mealCount, sideCount, drinkCount);
+		total = isNaN(total) ? 0 : total;
+		console.log(`\nYour total is \$${total}. \nEnjoy your meal!\n\n`);
+	}
 }
  
 groupOrder(); // Calls undefined function for nested function commands

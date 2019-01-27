@@ -17,7 +17,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
             <option value = "fries"> Fries </option>
             <option value = "drink"> Drink </option>
             <option value = "burger"> Burger </option>
-        </select>
+        </select> <br>
         <label for = "orderTopping">Enter your topping: </label>
         <select class = "pizza" disabled id = "orderTopping" name = "orderTopping">
             <option value = "">--Select a Topping--</option>
@@ -54,11 +54,6 @@ Order.js is the first ES6 program (through the console) I have made that is host
     </form>
     <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
     <input id = "finish-order" disabled type = "button" value = "Finish Order" onclick = "orderAll()">
-    <fieldset>
-        <legend>Personal: </legend>
-        <label for = "name">Name: </label><input name = "name" type="text"><br>
-        <label for = "email">Email: </label><input name = "email" type = "email"><br>
-    </fieldset>
 </div>
 <div style = "height: 50vh; overflow: auto;" class = "highlight"> 
     <div class = "gt" id = "program"> </div>
