@@ -9,6 +9,12 @@ let counter = 1;
 
 // Define functions called in forms
 function duplicateForm() {
+	/*
+		This function uses the Node.prototype.cloneNode() method to clone the form
+		* It is called when the user clicks the add order input button
+		* Finally, it is inserted before the afterEl, which is purposely identified for the location on the 'DOM family tree' of the new form
+	*/
+
 	const newForm = firstForm.cloneNode(true);
 	const newFields = newForm.elements;
 	counter++;
@@ -20,6 +26,12 @@ function duplicateForm() {
 	formsParent.insertBefore(newForm, afterEl);
 }
 function orderFood() {
+	/*
+		This function calls the groupOrder function if all goes well and passes in the apprpriate arguments
+		* If there is any error, it moves from the try statement to the catch statement
+		* If the user does not fill in the required fields and they ordered, nothing is shown (hence, break checkNull;)
+	*/
+
 	checkNull: try {
 		let arr = [];
 		// Loops through all forms
@@ -60,5 +72,20 @@ function orderAll() {
 function removeOrder(el) {
 	// Call remove method on element to remove
 	el.parentNode.parentNode.removeChild(el.parentNode);
+}
+
+function enableFields(el) {
+	/*
+		This function enables all the siblings of the select#orderType element
+		* The element itself is already enabled
+		* The unnecessary elements for the currently chosen food order are gone, 
+		* but they will be disabled if the user changes their order or adds another one
+		* the disabled property is removed from the siblings and submit button using Element.prototype.removeAttribute() method
+	*/
+
+	el.siblings().forEach(element => {
+		element.removeAttribute("disabled");
+	});
+	submitButton.removeAttribute("disabled");
 }
 

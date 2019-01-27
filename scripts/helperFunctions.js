@@ -5,6 +5,9 @@ console.log = function(statement) {
 };
 
 Node.prototype.siblings = function() {
+	/*
+		This extension of the Node object returns the siblings of an element, almost the same way that the jQuery .siblings() method works
+	*/
 	let result = [],
     node = this.parentNode.firstChild;
 	while (node) { // While node's parent's children is not the same node
@@ -63,15 +66,9 @@ const removeUnnecessary = function(elem) {
 			} else {
 				currentSibling.previousElementSibling.style.display = "inline";
 				currentSibling.style.display = "inline";
-				currentSibling.nextElementSibling.style.display = "block";				
+				currentSibling.nextElementSibling.style.display = "block";
 			}
 		}
 	}
 };
-
-function enableFields(el) {
-	el.siblings().forEach(element => {
-		element.disabled = submitButton.disabled = false;
-	});
-}
 
