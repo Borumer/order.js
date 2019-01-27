@@ -66,7 +66,7 @@ const removeUnnecessary = function(elem) {
 			} else {
 				currentSibling.previousElementSibling.style.display = "inline";
 				currentSibling.style.display = "inline";
-				currentSibling.nextElementSibling.style.display = "block";				
+				currentSibling.nextElementSibling.style.display = "block";
 			}
 		}
 	}
