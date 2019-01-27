@@ -1,6 +1,6 @@
 <script src = "https://cdn.jsdelivr.net/gh/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/script.js"></script>
 
-# Order.js
+# Singh Catering Services
 
 ## About ##
 
@@ -17,7 +17,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
             <option value = "fries"> Fries </option>
             <option value = "drink"> Drink </option>
             <option value = "burger"> Burger </option>
-        </select> <br>
+        </select>
         <label for = "orderTopping">Enter your topping: </label>
         <select class = "pizza" disabled id = "orderTopping" name = "orderTopping">
             <option value = "">--Select a Topping--</option>
@@ -29,7 +29,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
             <option value = "sun-dried"> Sun Dried Tomatoes </option>
             <option value = "fresh-basil"> Fresh Basil </option>
             <option value = ""> None </option>
-        </select> <br> 
+        </select> 
         <label for = "crustType">Enter your crust: </label>
         <input class = "pizza" disabled type = "text" name = "crustType"> <br>  
         <label for = "size">Enter the size: </label>

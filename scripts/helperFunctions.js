@@ -72,18 +72,3 @@ const removeUnnecessary = function(elem) {
 	}
 };
 
-function enableFields(el) {
-	/*
-		This function enables all the siblings of the select#orderType element
-		* The element itself is already enabled
-		* The unnecessary elements for the currently chosen food order are gone, 
-		* but they will be disabled if the user changes their order or adds another one
-		* the disabled property of both the elements and the submitButton (since it is outside the form) are left-hand assignments to the right hand-assignment boolean false
-		* The statement is wrapped in the .forEach() method o iterate through each element
-	*/
-
-	el.siblings().forEach(element => {
-		element.disabled = submitButton.disabled = false;
-	});
-}
-
