@@ -3,17 +3,14 @@ String.prototype.toTitleCase = function() {
 };
 
 function groupOrder(orders) {
-	let sideCount = 0;
-	let mealCount = 0;
-	let drinkCount = 0;
 
 	const pizzaOrder = ({size, crustType, topping, quantity}) => {
 		quantity = Math.round(parseInt(quantity));
 
 		if (topping === "") {
-			console.log(`Order: ${quantity} ${size.toTitleCase()} ${crustType.toLowerCase()} crust plain cheese pizza`);
+			print(`Order: ${quantity} ${size.toTitleCase()} ${crustType.toLowerCase()} crust plain cheese pizza`);
 		} else {
-			console.log(`Order: ${quantity} ${size.toTitleCase()} ${crustType.toLowerCase()} crust ${topping} pizza`);
+			print(`Order: ${quantity} ${size.toTitleCase()} ${crustType.toLowerCase()} crust ${topping} pizza`);
 		}
 
 		return {mealCount: quantity};	
@@ -22,28 +19,28 @@ function groupOrder(orders) {
 	const hotDogOrder = ({quantity, condiments}) => {
 		quantity = Math.round(parseInt(quantity));
 
-		console.log(`Order: ${quantity} hot dogs with ${condiments}`);
+		print(`Order: ${quantity} hot dogs with ${condiments}`);
 		return {mealCount: quantity};
 	};
 
 	const friesOrder = ({quantity, size}) => {
 		quantity = Math.round(parseInt(quantity));
 
-		console.log(`Side: ${quantity} ${size} boxes of french fries`);
+		print(`Side: ${quantity} ${size} boxes of french fries`);
 		return {sideCount: quantity};
 	};
 
 	const addDrink = ({name, quantity}) => {
 		quantity = Math.round(parseInt(quantity));
 
-		console.log(`Drink: ${quantity} ${name}`);
+		print(`Drink: ${quantity} ${name}`);
 		return {drinkCount: quantity};
 	};
 
 	const burgerOrder = ({condiments, quantity}) => {
 		quantity = Math.round(parseInt(quantity));
 
-		console.log(`Order: ${quantity} burgers with ${condiments}`)
+		print(`Order: ${quantity} burgers with ${condiments}`)
 		return {mealCount: quantity};
 	};
 
@@ -78,26 +75,31 @@ function groupOrder(orders) {
 	};
 	
 	if (typeof orders === 'object') { // If the array is initialized, do this
-		console.log(orders[0].mealCount);
-		const mealCount = orders.reduce((av, cv) => {
-			if (cv.mealCount) {
-				return cv.mealCount + av;
+		let mealCount = orders.reduce((av, cv) => {
+			console.log("ub nealCount .reduce()")
+			if (cv.hasOwnProperty('mealCount')) {
+				return {mealCount: av.mealCount + cv.mealCount};
 			}
-		});
-		const sideCount = orders.reduce((av, cv) => {
-			if (cv.sideCount) {
-				return cv.sideCount + av;
+			return {mealCount: av.mealCount + 0};
+		}).mealCount;
+		mealCount = isNaN(mealCount) ? 0 : mealCount;
+		let sideCount = orders.reduce((av, cv) => {
+			if (cv.hasOwnProperty('sideCount')) {
+				return {sideCount: cv.sideCount + av.sideCount};
 			}
-		});
-		const drinkCount = orders.reduce((av, cv) => {
-			if (cv.drinkCount) {
-				return cv.drinkCount + av;
+			return {sideCount: av.sideCount + 0};
+		}).sideCount;
+		sideCount = isNaN(sideCount) ? 0 : sideCount;
+		let drinkCount = orders.reduce((av, cv) => {
+			if (cv.hasOwnProperty('drinkCount')) {
+				return {drinkCount: cv.drinkCount + av.drinkCount};
 			}
-		});
-		
-		let total = getTotal(mealCount, sideCount, drinkCount);
-		total = isNaN(total) ? 0 : total;
-		console.log(`\nYour total is \$${total}. \nEnjoy your meal!\n\n`);
+			return {drinkCount: av.drinkCount + 0};
+		}).drinkCount;
+		drinkCount = isNaN(drinkCount) ? 0 : drinkCount;
+
+		const total = getTotal(mealCount, sideCount, drinkCount);
+		print(`\nYour total is \$${total}. \nEnjoy your meal!\n\n`);
 	}
 }
  

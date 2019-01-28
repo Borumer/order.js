@@ -57,7 +57,7 @@ function orderFood() {
 		}
 		groupOrder(arr);				
 	}
-	catch(e) {console.log(e)}	
+	catch(e) {print(e)}	
 }
 function displaySubmitMessage() {
 	formsParent.innerHTML = `<p style = "text-align: center; color: black; font-family: 'Times New Roman'; font-size: 2em;"> Order submitted. Thank you for ordering! </p>`;

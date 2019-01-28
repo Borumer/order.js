@@ -1,5 +1,5 @@
 // Define/Redefine methods of predefined objects (helper methods)
-console.log = function(statement) {
+const print = function(statement) {
 	const outputEl = document.querySelector("#program");
 	outputEl.innerHTML += `${statement} <br>`;
 };
