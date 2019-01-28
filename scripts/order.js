@@ -76,26 +76,25 @@ function groupOrder(orders) {
 	
 	if (typeof orders === 'object') { // If the array is initialized, do this
 		let mealCount = orders.reduce((av, cv) => {
-			console.log("ub nealCount .reduce()")
 			if (cv.hasOwnProperty('mealCount')) {
 				return {mealCount: av.mealCount + cv.mealCount};
 			}
 			return {mealCount: av.mealCount + 0};
-		}).mealCount;
+		}, {mealCount: 0}).mealCount;
 		mealCount = isNaN(mealCount) ? 0 : mealCount;
 		let sideCount = orders.reduce((av, cv) => {
 			if (cv.hasOwnProperty('sideCount')) {
 				return {sideCount: cv.sideCount + av.sideCount};
 			}
 			return {sideCount: av.sideCount + 0};
-		}).sideCount;
+		}, {sideCount: 0}).sideCount;
 		sideCount = isNaN(sideCount) ? 0 : sideCount;
 		let drinkCount = orders.reduce((av, cv) => {
 			if (cv.hasOwnProperty('drinkCount')) {
 				return {drinkCount: cv.drinkCount + av.drinkCount};
 			}
 			return {drinkCount: av.drinkCount + 0};
-		}).drinkCount;
+		}, {drinkCount: 0}).drinkCount;
 		drinkCount = isNaN(drinkCount) ? 0 : drinkCount;
 
 		const total = getTotal(mealCount, sideCount, drinkCount);
