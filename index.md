@@ -1,5 +1,4 @@
-<script src = "https://cdn.jsdelivr.net/gh/KnowledgeableKangaroo/KnowledgeableKangaroo.github.io/script.js"></script>
-
+<script src = "../script.js"></script>
 # Singh Catering Services
 
 ## About ##
@@ -32,8 +31,15 @@ Order.js is the first ES6 program (through the console) I have made that is host
         </select> <br>
         <label for = "crustType">Enter your crust: </label>
         <input class = "pizza" disabled type = "text" name = "crustType"> <br>  
-        <label for = "size">Enter the size: </label>
-        <input class = "pizza fries drink" disabled type = "text" name = "size"> <br>  
+        <p id = "size" disabled class = "pizza fries drink">
+            <label for = "size">Enter the size: </label>
+            Small: 
+            <input type = "radio" name = "size" value = "small">
+            Medium: 
+            <input type = "radio" name = "size" value = "medium">
+            Large: 
+            <input type = "radio" name = "size" value = "large">
+        </p>
         <label for = "quantity">Enter your quantity: </label>
         <input class = "pizza hotDog fries drink burger" disabled type = "number" name = "quantity" min = "1" max = "30" value = "1"> <br>  
         <label for = "drink">Enter your drink: </label>

@@ -56,6 +56,8 @@ const removeUnnecessary = function(elem) {
 					currentSibling.nextElementSibling.style.display = "none";
 					currentSibling.nextElementSibling.nextElementSibling.style.display = "none";
 				}
+			} else if (currentSibling.id == "size") {
+				
 			} else if (!currentSibling.classList.contains(currentOrderVal)) {
 				currentSibling.previousElementSibling.style.display = "none";
 				currentSibling.style.display = "none";
