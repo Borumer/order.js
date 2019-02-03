@@ -33,11 +33,11 @@ Order.js is the first ES6 program (through the console) I have made that is host
         <input class = "pizza" disabled type = "text" name = "crustType"> <br>  
         <p id = "size" disabled class = "pizza fries drink">
             <span>Enter the size: </span>
-            <input type = "radio" name = "size" value = "small">
+            <input type = "radio" name = "size" id = "small" value = "small">
             <label for = "small">Small</label>
-            <input type = "radio" name = "size" value = "medium">
+            <input type = "radio" name = "size" id = "medium" value = "medium">
             <label for = "medium">Medium</label>
-            <input type = "radio" name = "size" value = "large">
+            <input type = "radio" name = "size" id = "large" value = "large">
             <label for = "large">Large</label>
         </p>
         <label for = "quantity">Enter your quantity: </label>
