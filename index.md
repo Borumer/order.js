@@ -30,7 +30,7 @@ Order.js is the first ES6 program (through the console) I have made that is host
             <option value = ""> None </option>
         </select> <br>
         <label for = "crustType">Enter your crust: </label>
-        <input class = "pizza" disabled type = "text" name = "crustType"> <br>  
+        <input class = "pizza" disabled type = "text" name = "crustType" id = "crustType"> <br>  
         <p id = "size" disabled class = "pizza fries drink">
             <span>Enter the size: </span>
             <input type = "radio" name = "size" id = "small" value = "small">
@@ -41,9 +41,9 @@ Order.js is the first ES6 program (through the console) I have made that is host
             <label for = "large">Large</label>
         </p>
         <label for = "quantity">Enter your quantity: </label>
-        <input class = "pizza hotDog fries drink burger" disabled type = "number" name = "quantity" min = "1" max = "30" value = "1"> <br>  
+        <input class = "pizza hotDog fries drink burger" disabled type = "number" id = "quantity" name = "quantity" min = "1" max = "30" value = "1"> <br>  
         <label for = "drink">Enter your drink: </label>
-        <input class = "drink" disabled type = "text" name = "drink"> <br>
+        <input class = "drink" disabled type = "text" name = "drink" id = "drink"> <br>
         <label for = "condiments">Enter your condiments: </label>
         <select class = "hotDog burger fries" disabled name = "condiments" id = "condiments">
             <option value = "">--Select a condiment--</option>
@@ -52,9 +52,9 @@ Order.js is the first ES6 program (through the console) I have made that is host
             <option value = "Relish"> Relish </option>
             <option value = "Chili"> Chili </option>
         </select> <br>
-        <label for="doneness">How do you want your patty cooked? </label>
+        <label for = "doneness">How do you want your patty cooked? </label>
         <span>Rare</span>
-        <input disabled type="range" class = "burger" name="doneness" id="doneness" value="3" min="1" max="5">
+        <input disabled type="range" class = "burger" name = "doneness" id = "doneness" value="3" min="1" max="5">
         <span>Well-Done</span> <br>
         <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
     </form>
