@@ -8,20 +8,22 @@
 </script>
 # Singh Catering Services
 
+<div id = "snowflakes-photo" class = "discount-season">
+    <a id = "snowflake" href = "https://unsplash.com/@kalleandco?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target = "_blank" rel = "noopener noreferrer" title = "Download free do whatever you want high-resolution photos from Kalle Kortelainen">
+        <span>
+            <svg xmlns = "http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+                <title>unsplash-logo</title>
+                <path d = "M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
+            </svg>
+        </span>
+        <img src = "images/snowflakes.jpg">
+        <span>Kalle Kortelainen</span>
+    </a>
+</div>
+
 ## About ##
 
 Order.js is the first ES6 program (through the console) I have made that is hosted on GitHub through Git workflow. The person takes an order through a function call and the price is calculated based on what they ordered and how many items. 
-
-<div id = "snowflakes-photo" class = "discount-season">
-    <a id = "snowflake" style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@kalleandco?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Kalle Kortelainen">
-        <span style="display:inline-block;padding:2px 3px">
-            <svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32">
-                <title>unsplash-logo</title>
-                <path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
-            </svg>
-        </span>
-        <span style="display:inline-block;padding:2px 3px">Kalle Kortelainen</span>
-</a>
 
 <object width = "900" height = "270" data = "README.html" type = "text/html"></object>
 <div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
