@@ -9,7 +9,8 @@ function giveDiscount(toChange) {
 function findSeason() {
 	/*
 	Courtesy of stackoverflow
-	https://stackoverflow.com/a/54501026/9860982 by komieff
+	komieff at 
+	https://stackoverflow.com/a/54501026/9860982 
 	*/
 	const after = (target, dm) => (target.month > dm.month) 
 	|| ((target.month === dm.month) && (target.day >= dm.day)) 
