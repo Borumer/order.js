@@ -8,18 +8,24 @@
 </script>
 # Singh Catering Services
 
-<div id = "snowflakes-photo" class = "discount-season">
-    <a id = "snowflake" href = "https://unsplash.com/@kalleandco?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target = "_blank" rel = "noopener noreferrer" title = "Download free do whatever you want high-resolution photos from Kalle Kortelainen">
+<div id="snowflakes-photo">
+  <a id="snowflake" href="https://unsplash.com/@kalleandco?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Kalle Kortelainen">
         <span>
             <svg xmlns = "http://www.w3.org/2000/svg" viewBox="0 0 32 32">
                 <title>unsplash-logo</title>
                 <path d = "M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path>
             </svg>
-        </span>
-        <img src = "images/snowflakes.jpg">
+        </span> <br>
+        <div class = "wrap">
+          <img src = "images/snowflakes.jpg" width = "1000">
+          <p class = "text_over_image">
+          Winter Season 20% Discount
+          </p>
+        </div>
         <span>Kalle Kortelainen</span>
     </a>
 </div>
+
 
 ## About ##
 
@@ -97,7 +103,9 @@ Order.js is the first ES6 program (through the console) I have made that is host
 
 <a target = "_blank" title = "By Pink Sherbet Photography from USA (Cheese and Pepperoni Pizza) [CC BY 2.0 
  (https://creativecommons.org/licenses/by/2.0
-)], via Wikimedia Commons" href = "https://commons.wikimedia.org/wiki/File:Cheese_and_Pepperoni_Pizza_(4825046245).jpg"><img width="512" alt = "Cheese and Pepperoni Pizza (4825046245)" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Cheese_and_Pepperoni_Pizza_%284825046245%29.jpg/512px-Cheese_and_Pepperoni_Pizza_%284825046245%29.jpg"></a>
+)], via Wikimedia Commons" href = "https://commons.wikimedia.org/wiki/File:Cheese_and_Pepperoni_Pizza_(4825046245).jpg">
+    <img width="512" alt = "Cheese and Pepperoni Pizza (4825046245)" src = "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Cheese_and_Pepperoni_Pizza_%284825046245%29.jpg/512px-Cheese_and_Pepperoni_Pizza_%284825046245%29.jpg">
+</a>
 
 ### On-Page ###
 
