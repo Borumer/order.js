@@ -45,8 +45,6 @@ function findSeason() {
 	return currentSeason;
 }
 
-giveDiscount();
-
 function groupOrder(orders) {
 
 	const pizzaOrder = ({size, crustType, topping, quantity}) => {
@@ -123,7 +121,6 @@ function groupOrder(orders) {
 
 		if (findSeason() === 'winter') {
 			total = giveDiscount(total); // If it is winter discount season, give a discount
-			displayDiscountPicture();
 		}
 
 		total += tax; // Add the tax
@@ -160,4 +157,7 @@ function groupOrder(orders) {
 }
  
 groupOrder(); // Calls undefined function for nested function commands
+
+showDiscountPicture();
+console.log('There is a 20% discount because it is winter.');
 
