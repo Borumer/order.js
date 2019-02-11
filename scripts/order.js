@@ -121,8 +121,9 @@ function groupOrder(orders) {
 
 		total = subTotal; // Set to value before discount and after-tax
 
-		if (findSeason() === 'winter') {
+		if (findSeason() !== 'winter') {
 			total = giveDiscount(total); // If it is winter discount season, give a discount
+			displayDiscountPicture();
 		}
 
 		total += tax; // Add the tax
