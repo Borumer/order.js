@@ -158,6 +158,8 @@ function groupOrder(orders) {
  
 groupOrder(); // Calls undefined function for nested function commands
 
-showDiscountPicture();
-console.log('There is a 20% discount because it is winter.');
+if (findSeason() == 'winter') {
+	showDiscountPicture();
+	console.log('There is a 20% discount because it is winter.');
+}
 
