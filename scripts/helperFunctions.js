@@ -71,3 +71,8 @@ const removeUnnecessary = function(elem) {
 	}
 };
 
+const showDiscountPicture = function() {
+	const displayEl = document.getElementById('snowflakes-photo');
+	displayEl.style.display = "block";
+};
+
