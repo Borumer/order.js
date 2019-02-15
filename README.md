@@ -17,11 +17,5 @@ The following are the current options to order food and drinks:
 	sslink.rel = "stylesheet";
 	sslink.type = "text/css";
 	document.head.appendChild(sslink);
-
-	let favLink = document.createElement("link");
-	favLink.rel = "shortcut icon";
-	favLink.type = "images/x-icon";
-	favLink.href = "images/icon.ico";
-	document.head.appendChild(favLink);
 </script>
 

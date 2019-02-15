@@ -5,6 +5,8 @@
     secondStylesheet.type = 'text/css';
     secondStylesheet.rel = 'stylesheet';
     document.head.appendChild(secondStylesheet);
+
+    createLinkElement('image/x-icon', 'shortcut icon', 'images/icon.ico');
 </script>
 # Singh Catering Services
 
