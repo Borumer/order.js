@@ -96,6 +96,8 @@ Order.js is the first ES6 program (through the console) I have made that is host
 <script src = "scripts/helperFunctions.js"></script>
 <script src = "scripts/orderIn.js"></script>
 <script src = "scripts/order.js"></script>
+<script src = "scripts/unaccessibleContent.js"></script>
+
 
 [Home](https://knowledgeablekangaroo.github.io)
 
