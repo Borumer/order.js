@@ -80,8 +80,12 @@ const removeUnnecessary = function(elem) {
 		}
 	}
 
-	function handleInputRadio(numEls) {
-
+	function handleInputRadio() {
+		if (isCorrectClass) {
+			currentSibling.style.display = "block";
+		} else {
+			currentSibling.style.display = "none";
+		}
 	}
 
 };
