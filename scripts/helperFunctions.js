@@ -41,30 +41,26 @@ const removeUnnecessary = function(elem) {
 		// Set boolean whether currrent element has the class name that is the current order type
 		const isCorrectClass = currentSibling.classList.contains(currentOrderVal);
 		// Set allowed form elements
-		const arr = ["SELECT", "TEXTAREA", "INPUT", "OUTPUT", "OPTGROUP", "DATALIST"]; 
+		const arr = ["P", "SELECT", "TEXTAREA", "INPUT", "OUTPUT", "OPTGROUP", "DATALIST"]; 
 
 		// If it is a form element that is specific to the food order
 		if (arr.includes(currentSibling.tagName) && currentSibling.nextElementSibling !== null) {
 			// If the element contains the selected food order's name class
 			if (currentSibling.matches('input[type="range"]')) { // If range input
-				handleInputRange();
-			} else if (currentSibling.matches('input[type="radio"]')) { // If radio button
-				handleInputRadio();
+				handleInputRange(currentSibling);
+				console.log('It\'s the range')
+			} else if (currentSibling.id == 'size') { // If radio button
+				console.log('It\'s is the size')
+				handleInputRadio(currentSibling);
 			} else { // If anything else
-				if (isCorrectClass) {
-					currentSibling.previousElementSibling.style.display = "inline";
-					currentSibling.style.display = "inline";
-					currentSibling.nextElementSibling.style.display = "block";			
-				} else {
-					currentSibling.previousElementSibling.style.display = "none";
-					currentSibling.style.display = "none";
-					currentSibling.nextElementSibling.style.display = "none";	
-				}
+				handleAllOthers(currentSibling);
+				console.log('It\'s something else')
 			}
 		}
 	}
 
-	function handleInputRange() {
+	function handleInputRange(currentSibling) {
+		const isCorrectClass = currentSibling.classList.contains(currentOrderVal);
 		if (isCorrectClass) {
 			currentSibling.previousElementSibling.previousElementSibling.style.display = "inline";
 			currentSibling.previousElementSibling.style.display = "inline";
@@ -80,12 +76,26 @@ const removeUnnecessary = function(elem) {
 		}
 	}
 
-	function handleInputRadio() {
+	function handleInputRadio(currentSibling) {
+		const isCorrectClass = currentSibling.classList.contains(currentOrderVal);
 		if (isCorrectClass) {
 			currentSibling.style.display = "block";
 		} else {
 			currentSibling.style.display = "none";
 		}
+	}
+
+	function handleAllOthers(currentSibling) {
+		const isCorrectClass = currentSibling.classList.contains(currentOrderVal);
+		if (isCorrectClass) {
+			currentSibling.previousElementSibling.style.display = "inline";
+			currentSibling.style.display = "inline";
+			currentSibling.nextElementSibling.style.display = "block";			
+		} else {
+			currentSibling.previousElementSibling.style.display = "none";
+			currentSibling.style.display = "none";
+			currentSibling.nextElementSibling.style.display = "none";	
+		}		
 	}
 
 };

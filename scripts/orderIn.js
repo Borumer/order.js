@@ -19,9 +19,15 @@ function duplicateForm() {
 	const newFields = newForm.elements;
 	counter++;
 	for (let i = 0; i < newFields.length - 1; i++) {
-		newFields[i].value = "";
-		newFields[i].name = firstForm[i].name;
-		newFields[i].onchange = firstForm[i].onchange;
+		let newField = newFields[i];
+		if (newField.matches('input[type="radio"]')) {
+			newField.id += counter;
+			newField.nextElementSibling.htmlFor += counter;
+		}
+		else
+			newField.value = "";
+		newField.name = firstForm[i].name;
+		newField.onchange = firstForm[i].onchange;
 	}
 	formsParent.insertBefore(newForm, afterEl);
 }
@@ -44,10 +50,13 @@ function orderFood() {
 				if(currentElement.required && currentElement.value === "")
 					break checkNull;
 			}
+
+			let chosenSize = document.querySelector('input[name="size"]:checked').value;
+
 			arr.push(groupOrder[currentForm.orderType.value + "Order"](
 			{
 					topping: currentForm.orderTopping.value,
-					size: currentForm.size.value,
+					size: chosenSize,
 					crustType: currentForm.crustType.value,
 					quantity: currentForm.quantity.value,
 					name: currentForm.drink.value,
