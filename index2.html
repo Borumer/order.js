@@ -94,8 +94,18 @@
             <option value = "fresh-basil"> Fresh Basil </option>
             <option value = ""> None </option>
         </select> <br>
+        
+
         <label for = "crustType">Enter your crust: </label>
-        <input class = "pizza" disabled type = "text" name = "crustType" id = "crustType"> <br>  
+        <input class = "pizza" disabled type = "text" name = "crustType" id = "crustType" list = "crust_list"> <br>  
+        <datalist id="crust_list">
+          <option value="NJ">New York/New Jersey</option>
+          <option value="NE">New England Greek Style</option>
+          <option value="AL">Albania</option>
+          <option value="DZ">Algeria</option>
+          <!-- more -->
+        </datalist>
+
         <p id = "size" disabled class = "pizza fries drink">
             <span>Enter the size: </span>
             <input type = "radio" name = "size" id = "small" value = "small">
