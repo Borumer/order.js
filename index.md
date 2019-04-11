@@ -34,29 +34,35 @@ Order.js is the first ES6 program (through the console) I have made that is host
 <object width = "900" height = "270" data = "README.html" type = "text/html"></object>
 <div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
     <form>
-        <label for = "orderType">Enter the type of food order: </label>
-        <select onchange = "enableFields(this); removeUnnecessary(this.parentNode);" name = "orderType" id = "orderType" required>
-            <option value = "">--Select a type--</option>
-            <option value = "pizza"> Pizza </option>
-            <option value = "hotDog"> Hot Dog </option>
-            <option value = "fries"> Fries </option>
-            <option value = "drink"> Drink </option>
-            <option value = "burger"> Burger </option>
-        </select> <br>
-        <label for = "orderTopping">Enter your topping: </label>
-        <select class = "pizza" disabled id = "orderTopping" name = "orderTopping">
-            <option value = "">--Select a Topping--</option>
-            <option value = "pepperoni"> Pepperoni </option>
-            <option value = "mushroom"> Mushroom </option>
-            <option value = "veggie"> Vegetable </option>
-            <option value = "sausage"> Sausage </option>
-            <option value = "anchovy"> Anchovy </option>
-            <option value = "sun-dried"> Sun Dried Tomatoes </option>
-            <option value = "fresh-basil"> Fresh Basil </option>
-            <option value = ""> None </option>
-        </select> <br>
-        <label for = "crustType">Enter your crust: </label>
-        <input class = "pizza" disabled type = "text" name = "crustType" id = "crustType"> <br>  
+        <p id = "orderType">
+            <label for = "orderType">Enter the type of food order: </label>
+            <select onchange = "enableFields(this); removeUnnecessary(this.parentNode);" name = "orderType" id = "orderType" required>
+                <option value = "">--Select a type--</option>
+                <option value = "pizza"> Pizza </option>
+                <option value = "hotDog"> Hot Dog </option>
+                <option value = "fries"> Fries </option>
+                <option value = "drink"> Drink </option>
+                <option value = "burger"> Burger </option>
+            </select>
+        </p>
+        <p>
+            <label for = "orderTopping">Enter your topping: </label>
+            <select class = "pizza" disabled id = "orderTopping" name = "orderTopping">
+                <option value = "">--Select a Topping--</option>
+                <option value = "pepperoni"> Pepperoni </option>
+                <option value = "mushroom"> Mushroom </option>
+                <option value = "veggie"> Vegetable </option>
+                <option value = "sausage"> Sausage </option>
+                <option value = "anchovy"> Anchovy </option>
+                <option value = "sun-dried"> Sun Dried Tomatoes </option>
+                <option value = "fresh-basil"> Fresh Basil </option>
+                <option value = ""> None </option>
+            </select>
+        </p>
+        <p>
+            <label for = "crustType">Enter your crust: </label>
+            <input class = "pizza" disabled type = "text" name = "crustType" id = "crustType">  
+        </p>
         <p id = "size" disabled class = "pizza fries drink">
             <span>Enter the size: </span>
             <input type = "radio" name = "size" id = "small" value = "small">
@@ -66,22 +72,30 @@ Order.js is the first ES6 program (through the console) I have made that is host
             <input type = "radio" name = "size" id = "large" value = "large">
             <label for = "large">Large</label>
         </p>
-        <label for = "quantity">Enter your quantity: </label>
-        <input class = "pizza hotDog fries drink burger" disabled type = "number" id = "quantity" name = "quantity" min = "1" max = "30" value = "1"> <br>  
-        <label for = "drink">Enter your drink: </label>
-        <input class = "drink" disabled type = "text" name = "drink" id = "drink"> <br>
-        <label for = "condiments">Enter your condiments: </label>
-        <select class = "hotDog burger fries" disabled name = "condiments" id = "condiments">
-            <option value = "">--Select a condiment--</option>
-            <option value = "Ketchup"> Ketchup </option>
-            <option value = "Mustard"> Mustard </option>
-            <option value = "Relish"> Relish </option>
-            <option value = "Chili"> Chili </option>
-        </select> <br>
-        <label for = "doneness">How do you want your patty cooked? </label>
-        <span>Rare</span>
-        <input disabled type="range" class = "burger" name = "doneness" id = "doneness" value="3" min="1" max="5">
-        <span>Well-Done</span> <br>
+        <p>
+            <label for = "quantity">Enter your quantity: </label>
+            <input class = "pizza hotDog fries drink burger" disabled type = "number" id = "quantity" name = "quantity" min = "1" max = "30" value = "1">
+        </p>
+        <p>
+            <label for = "drink">Enter your drink: </label>
+            <input class = "drink" disabled type = "text" name = "drink" id = "drink">
+        </p>
+        <p>
+            <label for = "condiments">Enter your condiments: </label>
+            <select class = "hotDog burger fries" disabled name = "condiments" id = "condiments">
+                <option value = "">--Select a condiment--</option>
+                <option value = "Ketchup"> Ketchup </option>
+                <option value = "Mustard"> Mustard </option>
+                <option value = "Relish"> Relish </option>
+                <option value = "Chili"> Chili </option>
+            </select>
+        </p>
+        <p>
+            <label for = "doneness">How do you want your patty cooked? </label>
+            <span>Rare</span>
+            <input disabled type="range" class = "burger" name = "doneness" id = "doneness" value="3" min="1" max="5">
+            <span>Well-Done</span>
+        </p>
         <input type = "button" value = "Remove Order" onclick = "removeOrder(this)">
     </form>
     <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
