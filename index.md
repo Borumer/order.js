@@ -1,15 +1,14 @@
-<!DOCTYPE html>
-<html>
-<link href = "css/additions.css" type = "text/css" rel = "stylesheet">
-<title>Borum Feasts</title>
-<link href = "images/icon.ico" rel = "shortcut icon" type = "image/x-icon">
-<script src = "./scripts/helperFunctions.js"></script>
-<script src = "./scripts/orderIn.js"></script>
-<script src = "./scripts/order.js"></script>
-<script src = "./scripts/unaccessibleContent.js"></script>
-<xmp theme="united" style="display:none;">
+<script src = "../script.js"></script>
+<script>
+    let secondStylesheet = document.createElement('link');
+    secondStylesheet.href = 'css/additions.css';
+    secondStylesheet.type = 'text/css';
+    secondStylesheet.rel = 'stylesheet';
+    document.head.appendChild(secondStylesheet);
 
-# Singh Catering Services 
+    createLinkElement('image/x-icon', 'shortcut icon', 'images/icon.ico');
+</script>
+# Singh Catering Services
 
 <div style = "display: none" id="snowflakes-photo">
   <a id="snowflake" href="https://unsplash.com/@kalleandco?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Kalle Kortelainen">
@@ -32,8 +31,10 @@
 
 ## About ##
 
+Order.js is the first ES6 program (through the console) I have made that is hosted on GitHub through Git workflow. The person takes an order through a function call and the price is calculated based on what they ordered and how many items. 
+
 <object width = "900" height = "270" data = "README.html" type = "text/html"></object>
-<div id = "forms" style = "border-color: rgba(27, 63, 68, 0.2); border-width: 1px; border-style: inset; padding: 2%; margin: 2%">
+<div id = "forms">
     <form>
         <p id = "orderType">
             <label for = "orderType">Enter the type of food order: </label>
@@ -102,14 +103,17 @@
     <input id = "writeroot" type = "button" value = "+ Add Order" onclick = "duplicateForm()" />
     <input id = "finish-order" disabled type = "button" value = "Finish Order" onclick = "orderAll()">
 </div>
-<div style = "height: 50vh; overflow: auto;" class = "highlight"> 
+<div class = "highlight"> 
     <div class = "gt" id = "program"> </div>
 </div>
 
-<script src = "./scripts/helperFunctions.js"></script>
-<script src = "./scripts/orderIn.js"></script>
-<script src = "./scripts/order.js"></script>
-<script src = "./scripts/unaccessibleContent.js"></script>
+<script src = "scripts/helperFunctions.js"></script>
+<script src = "scripts/orderIn.js"></script>
+<script src = "scripts/order.js"></script>
+<script src = "scripts/unaccessibleContent.js"></script>
+
+
+[Home](https://knowledgeablekangaroo.github.io)
 
 ## Attributions ##
 
@@ -125,11 +129,3 @@
 
 <a href = "#snowflake">Snowflake Photo</a>
 Photo by Kalle Kortelainen on Unsplash
-
-</xmp>
-
-
-
-<script src="http://strapdownjs.com/v/0.2/strapdown.js"></script>
-</html>
-
