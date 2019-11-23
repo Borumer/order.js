@@ -46,7 +46,7 @@ function findSeason() {
 }
 
 function groupOrder(orders) {
-	// Define Food Ordering functions
+
 	const pizzaOrder = ({size, crustType, topping, quantity}) => {
 		quantity = Math.round(parseInt(quantity));
 
@@ -93,7 +93,6 @@ function groupOrder(orders) {
 	groupOrder.drinkOrder = addDrink;
 	groupOrder.burgerOrder = burgerOrder;
 
-	// Define price calculating functions
 	const getSubTotal = (mealCount, sideCount, drinkCount) => {
 		const costPerMeal = 7.50; // Costs in dollars per meal item
 		const costPerSide = 3.50; // Cost in dollars per side item
