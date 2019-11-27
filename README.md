@@ -1,3 +1,5 @@
+Order.js is the first ES6 program (through the console) I have made that is hosted on GitHub through Git workflow. The person takes an order through a function call and the price is calculated based on what they ordered and how many items.
+
 This is a program in which you take an order with nested functions with the arguments including topping, crust type, quantity, how-well-roasted, name-of-drink, and size. The price is calculated. Based on the number of orders in a group of customers, the total group order price is calculated.
 
 A function declaration calculates sub total, adds 6% tax, and prints the total in US Dollars. The total is calculated by adding the total side cost - a constant integer price per side - and the total meal cost - a constant integer price per meal. When you call the group order function, you pass every customers' order as a value of the array, the one and only argument of the group order function call. You can take different types of food orders by calling different functions for the take order.
